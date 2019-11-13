@@ -44,6 +44,7 @@ Pr = rpf.Pr
 Ra = rpf.Ra
 Np = rpf.Np
 Ta = rpf.Ta
+phi = rpf.phi
 m = rpf.m
 theta = rpf.theta
 
