@@ -43,6 +43,7 @@ Nx, Nz = rpf.Nx, rpf.Nz
 Pr = rpf.Pr
 Ra = rpf.Ra
 Np = rpf.Np
+Ta = rpf.Ta
 m = rpf.m
 theta = rpf.theta
 
