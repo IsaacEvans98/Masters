@@ -128,9 +128,12 @@ problem.add_bc("left(uz) = 0")           # Stress-free bottom boundary
 problem.add_bc("right(uz) = 0")          # Stress-free top boundary
 problem.add_bc("right(s) = 0")           # Fixed entropy at upper boundary, arbitarily set to 0
 problem.add_bc("left(sz) = -1")          # Fixed flux at bottom boundary, F = F_cond
-
 problem.add_bc("left(L_buoy) = 0")       # BC for L_buoy for partial depth integration
 problem.add_bc("left(L_diss) = 0")       # BC for L_diss for partial depth integration
+problem.add_bc("right(vz) = 0")
+problem.add_bc("left(vz) = 0")
+
+
 
 # Build solver
 solver = problem.build_solver(de.timesteppers.RK222)
