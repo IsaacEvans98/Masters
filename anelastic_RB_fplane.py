@@ -99,10 +99,18 @@ problem.add_equation("  rho_ref*( dt(u) - (4/3)*dx(dx(u)) - dz(uz) - (1/3)*dx(wz
                         - dz_rho_ref*( uz + dx(w) ) \
                         = -rho_ref*( u *dx(u) + w*uz ) - (Ta)**(0.5)*(-v*sin(phi)) ")
 
+#y-component of the momentum equation
+problem.add_equation(" rho_ref*(dt(v) - dx(dx(v)) - dz(vz) ) \
+                       - dz_rho_ref*(vz) \
+                       = -rho_ref*( u*dx(v) + w*vz) - (Ta)**(0.5)*(u*sin(phi) - w*cos(phi) )  ")
+
+
 # z-component of the momentum equation
 problem.add_equation("  rho_ref*T_ref*( dt(w) - X*s - (4/3)*dz(wz) - dx(dx(w)) - (1/3)*dx(uz) ) + T_ref*dz(p) + theta*m*p \
                         + (2/3)*theta*m*rho_ref*( 2*wz - dx(u) ) \
                         = -rho_ref*T_ref*( u*dx(w) + w*wz ) - (Ta)**(0.5)*(v*cos(phi)) ")
+
+
 # entropy diffusion equation
 problem.add_equation("  T_ref*( Pr*dt(s) - dx(dx(s)) - dz(sz) ) + theta*(m+1)*sz \
                         = -Pr*T_ref*( u*dx(s) + w*sz )    \
@@ -181,7 +189,7 @@ analysis.add_task("integ((-1)*rho_ref*T_ref*sz, 'x')/Lx", layout='g', name='L_co
 analysis.add_task("integ(L_buoy - interp(L_buoy,z=0),'x')*(-Pr*theta)/Lx", layout='g', name='L_buoy')
 analysis.add_task("integ(L_diss - interp(L_diss,z=0),'x')*((Pr*Pr*theta)/Ra)/Lx", layout='g', name='L_diss')
 
-# Flux decomposition - Total energy equaton (L_conv and L_cond already outputted)
+# Flux decomposition - Total energy equation (L_conv and L_cond already outputted)
 analysis.add_task("integ(0.5*rho_ref*(u*u + w*w)*w, 'x')*((Pr*Pr*theta)/Ra)/Lx", layout='g', name='L_KE')
 analysis.add_task("integ((-1)*rho_ref*(u*(uz + dx(w) ) \
                     + (2/3)*w*(2*wz - dx(u) )), 'x')*((Pr*Pr*theta)/Ra)/Lx", layout='g', name='L_visc')
