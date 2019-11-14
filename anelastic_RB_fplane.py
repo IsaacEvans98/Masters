@@ -98,24 +98,24 @@ problem.add_equation("  (1-theta*z)*(dx(u) + wz) - theta*m*w = 0 ")
 # x-component of the momentum equation
 problem.add_equation("  rho_ref*( dt(u) - (4/3)*dx(dx(u)) - dz(uz) - (1/3)*dx(wz) ) + dx(p) \
                         - dz_rho_ref*( uz + dx(w) ) \
-                        = -rho_ref*( u *dx(u) + w*uz ) - (Ta)**(0.5)*(-v*sin(phi)) ")
+                        = -rho_ref*( u *dx(u) + w*uz ) - (Ta)**(0.5)*(-v*sin_phi) ")
 
 #y-component of the momentum equation
 problem.add_equation(" rho_ref*(dt(v) - dx(dx(v)) - dz(vz) ) \
                        - dz_rho_ref*(vz) \
-                       = -rho_ref*( u*dx(v) + w*vz) - (Ta)**(0.5)*(u*sin(phi) - w*cos(phi) )  ")
+                       = -rho_ref*( u*dx(v) + w*vz) - (Ta)**(0.5)*(u*sin_phi - w*cos_phi )  ")
 
 
 # z-component of the momentum equation
 problem.add_equation("  rho_ref*T_ref*( dt(w) - X*s - (4/3)*dz(wz) - dx(dx(w)) - (1/3)*dx(uz) ) + T_ref*dz(p) + theta*m*p \
                         + (2/3)*theta*m*rho_ref*( 2*wz - dx(u) ) \
-                        = -rho_ref*T_ref*( u*dx(w) + w*wz ) - (Ta)**(0.5)*(v*cos(phi)) ")
+                        = -rho_ref*T_ref*( u*dx(w) + w*wz ) - (Ta)**(0.5)*(v*cos_phi) ")
 
 
 # entropy diffusion equation
 problem.add_equation("  T_ref*( Pr*dt(s) - dx(dx(s)) - dz(sz) ) + theta*(m+1)*sz \
                         = -Pr*T_ref*( u*dx(s) + w*sz )    \
-                        + 2*Y*( dx(u)*dx(u) + wz*wz + uz*dx(w) - (1/3)*(dx(u)+wz)*(dx(u)+wz) + (1/2)*(uz*uz + dx(w)*dx(w))) ")
+                        + 2*Y*( dx(u)*dx(u) + wz*wz + uz*dx(w) - (1/3)*(dx(u)+wz)*(dx(u)+wz) + (1/2)*(uz*uz + dx(w)*dx(w) + dx(v)*dx(v) + vz*vz)) ")
 
 # Flux equations for use in analysis outputs
 problem.add_equation("  dz(L_buoy) = -s*rho_ref*w")

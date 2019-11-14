@@ -10,8 +10,8 @@ Pr = 1.                             # Prandtl number
 Pm = 1.                             # Magnetic Prandtl number
 Ra = 4e4                         # Rayleigh number
 Np = 1.5
-Ta = 1e5
-phi = 10                           # Number of density scale heights
+Ta = 1e7
+phi = np.pi/4                      # Number of density scale heights
 m = 1.5                             # Polytropic index
 theta = 1 - np.exp(-Np/m)           # Dimensionaless inverse T scale height
 
