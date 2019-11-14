@@ -55,7 +55,7 @@ domain = de.Domain([x_basis, z_basis], grid_dtype=np.float64)  # Defining our do
 z = domain.grid(1, scales=1)                                   # accessing the z values
 
 # 2D Anelastic hydrodynamics
-problem = de.IVP(domain, variables=['p', 's', 'u', 'v', 'vz', 'w', 'sz', 'uz', 'wz', 'L_buoy', 'L_diss'])
+problem = de.IVP(domain, variables=['p', 's', 'u', 'v', 'w', 'sz', 'uz', 'wz', 'L_buoy', 'L_diss'])
 problem.meta['p','s','u','w']['z']['dirichlet'] = True
 
 # Defining model parameters
@@ -88,7 +88,7 @@ problem.parameters['dz_rho_ref'] = dz_rho_ref   # z-derivative of rho_ref
 problem.add_equation("sz - dz(s) = 0")
 problem.add_equation("uz - dz(u) = 0")
 problem.add_equation("wz - dz(w) = 0")
-problem.add_equation("vz - dz(v) = 0")
+
 
 
 # mass continuity with rho_ref and dz(rho_ref) expanded analytically
@@ -157,7 +157,7 @@ solver.stop_iteration = rpf.end_iterations
 # CFL criterion
 CFL = flow_tools.CFL(solver, initial_dt=dt, cadence=10, safety=0.5,
                      max_change=1.5, min_change=0.5, max_dt=rpf.max_dt, threshold=0.05)
-CFL.add_velocities(('u', 'w'))
+CFL.add_velocities(('u', 'v', 'w'))
 
 # Flow properties
 flow = flow_tools.GlobalFlowProperty(solver, cadence=10)
