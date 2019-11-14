@@ -169,7 +169,7 @@ solver.stop_iteration = rpf.end_iterations
 # CFL criterion
 CFL = flow_tools.CFL(solver, initial_dt=dt, cadence=10, safety=0.5,
                      max_change=1.5, min_change=0.5, max_dt=rpf.max_dt, threshold=0.05)
-CFL.add_velocities(('u', 'v', 'w'))
+CFL.add_velocities(('u', 'w'))
 
 # Flow properties
 flow = flow_tools.GlobalFlowProperty(solver, cadence=10)
