@@ -55,7 +55,7 @@ domain = de.Domain([x_basis, z_basis], grid_dtype=np.float64)  # Defining our do
 z = domain.grid(1, scales=1)                                   # accessing the z values
 
 # 2D Anelastic hydrodynamics
-problem = de.IVP(domain, variables=['p', 's', 'u', 'v', 'w', 'sz', 'uz', 'wz', 'L_buoy', 'L_diss'])
+problem = de.IVP(domain, variables=['p', 's', 'u', 'v', 'vz', 'w', 'sz', 'uz', 'wz', 'L_buoy', 'L_diss'])
 problem.meta['p','s','u','w']['z']['dirichlet'] = True
 
 # Defining model parameters
@@ -88,6 +88,7 @@ problem.parameters['dz_rho_ref'] = dz_rho_ref   # z-derivative of rho_ref
 problem.add_equation("sz - dz(s) = 0")
 problem.add_equation("uz - dz(u) = 0")
 problem.add_equation("wz - dz(w) = 0")
+problem.add_equation("vz - dz(v) = 0")
 
 
 
