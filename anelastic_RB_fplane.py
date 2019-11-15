@@ -103,7 +103,7 @@ problem.add_equation("  rho_ref*( dt(u) - (4/3)*dx(dx(u)) - dz(uz) - (1/3)*dx(wz
 #y-component of the momentum equation
 problem.add_equation(" rho_ref*(dt(v) - dx(dx(v)) - dz(vz)  + (Ta)**(0.5)*sin(phi)*u  ) \
                        - dz_rho_ref*(vz) \
-                       = rho_ref*( -u*dx(v) - w*vz )   ")
+                       = -rho_ref*( u*dx(v) + w*vz )   ")
 
 
 # z-component of the momentum equation
@@ -173,7 +173,7 @@ CFL.add_velocities(('u', 'w'))
 
 # Flow properties
 flow = flow_tools.GlobalFlowProperty(solver, cadence=10)
-flow.add_property("sqrt(u*u + w*w + v*v)", name='Re')
+flow.add_property("sqrt(u*u + w*w)", name='Re')
 
 # Saving snapshots
 snapshots = solver.evaluator.add_file_handler(save_direc + 'snapshots', sim_dt=rpf.snapshot_freq, max_writes=50)
