@@ -122,7 +122,7 @@ if plot_fluxes:
     plt.plot(mean_s, z, 'r', linestyle='-')
     plt.xlabel("s")
     plt.ylabel("z")
-    plt.title("(Nx, Nz) = ({}, {}), Ra = {:.2e}, \nPr = {:.2f}, Time average = {:.2f} ".format(Nx,Nz,Ra,Pr,avg_t_range) + r"$\tau_\nu$")
+    plt.title("(Ny, Nz) = ({}, {}), Ra = {:.2e}, \nPr = {:.2f}, Time average = {:.2f} ".format(Ny,Nz,Ra,Pr,avg_t_range) + r"$\tau_\nu$")
     plt.legend()
     plt.savefig(save_direc + 'Entropy')
     plt.clf()
