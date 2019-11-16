@@ -71,7 +71,7 @@ problem.parameters['X'] = Ra/Pr
 problem.parameters['Y'] = (Pr*Pr*theta) / Ra
 problem.parameters['T'] = Ta**(1/2)
 problem.parameters['cos_lat'] = np.cos(Lat)
-problem.parameters['sin_lat'] = np.sin(lat)
+problem.parameters['sin_lat'] = np.sin(Lat)
 #print("####################################################################################")
 
 #print(Lat)
