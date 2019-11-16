@@ -107,7 +107,7 @@ problem.add_equation(" rho_ref*(dt(v) - dx(dx(v)) - dz(vz)  + (Ta)**(0.5)*sin(ph
 
 
 # z-component of the momentum equation
-problem.add_equation("  rho_ref*T_ref*( dt(w) - X*s - (4/3)*dz(wz) - dx(dx(w)) - (1/3)*dx(uz) + (Ta)**(0.5)*u*cos(phi) ) + T_ref*dz(p) + theta*m*p \
+problem.add_equation("  rho_ref*T_ref*( dt(w) - X*s - (4/3)*dz(wz) - dx(dx(w)) - (1/3)*dx(uz) - (Ta)**(0.5)*u*cos(phi) ) + T_ref*dz(p) + theta*m*p \
                         + (2/3)*theta*m*rho_ref*( 2*wz - dx(u) ) \
                         = rho_ref*T_ref*( -u*dx(w) - w*wz )  ")
 
