@@ -1,4 +1,4 @@
-scfrom dedalus import public as de
+from dedalus import public as de
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import h5py
