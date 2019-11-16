@@ -44,7 +44,7 @@ Pr = rpf.Pr
 Ra = rpf.Ra
 Np = rpf.Np
 Ta = rpf.Ta
-Lat = rpf.latitude
+Lat = rpf.lattitude
 m = rpf.m
 theta = rpf.theta
 
@@ -71,7 +71,7 @@ problem.parameters['X'] = Ra/Pr
 problem.parameters['Y'] = (Pr*Pr*theta) / Ra
 problem.parameters['T'] = Ta**(1/2)
 problem.parameters['cos_lat'] = np.cos(Lat)
-
+problem.parameters['sin_lat'] = np.sin(lat)
 #print("####################################################################################")
 
 #print(Lat)
