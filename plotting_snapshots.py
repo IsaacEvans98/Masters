@@ -31,7 +31,7 @@ with h5py.File(direc + "run_parameters/run_parameters_" + run_name + ".h5", mode
     Ra = file['tasks']['Ra'][0][0][0]
     Ly = int(file['tasks']['Ly'][0][0][0])
     Lz = int(file['tasks']['Lz'][0][0][0])
-    Nx = int(file['tasks']['Nx'][0][0][0])
+    Ny = int(file['tasks']['Ny'][0][0][0])
     Nz = int(file['tasks']['Nz'][0][0][0])
     x = np.linspace(0,Lx,Nx)
     # z = np.linspace(0,Lz,Nz)
