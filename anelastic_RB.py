@@ -35,7 +35,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 sys.path.append(os.getcwd())
-import run_param_file as rpf   # Imports a parameter file "run_param_file2.py"        # Changed to run_param_file2 11/11/2019
+import run_param_file2 as rpf   # Imports a parameter file "run_param_file2.py"        # Changed to run_param_file2 11/11/2019
 
 save_direc = "raw_data/"
 pathlib.Path(save_direc).mkdir(parents=True, exist_ok=True)
