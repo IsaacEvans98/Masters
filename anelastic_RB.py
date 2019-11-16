@@ -110,7 +110,7 @@ problem.add_equation("  rho_ref*( dt(v) - dx(dx(v)) - dz(vz) + Ta**(1/2)*sin_phi
 
 # new z-component of the momentum equation
 problem.add_equation("  T_ref*rho_ref*( dt(w) - X*s - dx(dx(w)) - (1/3)*dx(uz) - (4/3)*dz(wz) - Ta**(1/2)*cos_phi*u ) + T_ref*dz(p) + \
-             (2/3)*(1 - theta*z)*m*theta*((1-theta*z)**(m-1))*( dx(u) - 2*wz ) + p*m*theta \
+             (2/3)*(1 - theta*z)*m*theta*((1-theta*z)**(m-1))*( dx(u) - 2*wz ) + p*m*phi \
              = T_ref*rho_ref*( - u*dx(w) - w*wz ) ")
 
 # entropy diffusion equation
