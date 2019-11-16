@@ -43,7 +43,7 @@ with h5py.File(direc + "run_parameters/run_parameters_" + run_name + ".h5", mode
 
     print("Ra = {}".format(Ra))
     print("Pr = {}".format(Pr))
-    print("(Nx,Nz) = ({},{})".format(Nx,Nz))
+    print("(Ny,Nz) = ({},{})".format(Ny,Nz))
 
 with h5py.File(direc + "analysis/analysis_" + run_name + ".h5", mode='r') as file:
     L_cond_all = np.array(file['tasks']['L_cond'])[:,0,:]
