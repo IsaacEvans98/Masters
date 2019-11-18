@@ -62,7 +62,7 @@ with h5py.File(direc + "analysis/analysis_" + run_name + ".h5", mode='r') as fil
     ana_t = np.array(file['scales']['sim_time'])
 
 with h5py.File(direc + "snapshots/snapshots_" + run_name + ".h5", mode='r') as file:
-    u_all = np.array(file['tasks']['u'])
+    v_all = np.array(file['tasks']['v'])
     w_all = np.array(file['tasks']['w'])
     #T_all = np.array(file['tasks']['T'])
     snap_t = np.array(file['scales']['sim_time'])
@@ -83,16 +83,16 @@ else:
     SEI = (np.abs(snap_t - avg_t_stop)).argmin()  # snapshot end index
 avg_t_range = ana_t[AEI] - ana_t[ASI]
 
-min_u = np.min(u_all)
-max_u = np.max(u_all)
+min_v = np.min(v_all)
+max_v = np.max(v_all)
 min_w = np.min(w_all)
 max_w = np.min(w_all)
 #max_T = np.max(T_all)
 
 if abs(min_u) >= abs(max_u):
-    u_lim = abs(min_u)
+    u_lim = abs(min_v)
 else:
-    u_lim = abs(max_u)
+    u_lim = abs(max_v)
 if abs(min_w) >= abs(max_w):
     w_lim = abs(min_w)
 else:
@@ -208,13 +208,13 @@ if plot_final_state:
     ax3 = fig.add_subplot(gs[1,0])
     ax4 = fig.add_subplot(gs[1,1])
 
-    c1 = ax1.contourf(xx, zz, np.transpose(u), levels=np.linspace(-uf_lim, uf_lim, 51), cmap='RdBu_r')
+    c1 = ax1.contourf(yy, zz, np.transpose(v), levels=np.linspace(-vf_lim, vf_lim, 51), cmap='RdBu_r')
     c1_bar = fig.colorbar(c1, ax=ax1)
-    c1_bar.set_label("u", rotation=0)
+    c1_bar.set_label("v", rotation=0)
     ax1.set_ylabel("z")
     ax1.set_xlabel("y")
 
-    c2 = ax2.contourf(xx, zz, np.transpose(w), levels=np.linspace(-wf_lim, wf_lim, 51), cmap='RdBu_r')
+    c2 = ax2.contourf(yy, zz, np.transpose(w), levels=np.linspace(-wf_lim, wf_lim, 51), cmap='RdBu_r')
     c2_bar = fig.colorbar(c2, ax=ax2)
     c2_bar.set_label("w", rotation=0)
     ax2.set_ylabel("z")
@@ -277,7 +277,7 @@ if plot_snapshots:
 
     for i in range(0,len(u_all[:,0,0]),30):
 
-        u = u_all[i,:,:]
+        v = v_all[i,:,:]
         w = w_all[i,:,:]
         #T = T_all[i,:,:]
 
@@ -290,17 +290,17 @@ if plot_snapshots:
         ax3 = fig.add_subplot(gs[1,0])
         ax4 = fig.add_subplot(gs[1,1])
 
-        c1 = ax1.contourf(xx, zz, np.transpose(u), levels=np.linspace(-u_lim, u_lim, 51), cmap='RdBu_r')
+        c1 = ax1.contourf(xx, zz, np.transpose(v), levels=np.linspace(-v_lim, v_lim, 51), cmap='RdBu_r')
         c1_bar = fig.colorbar(c1, ax=ax1)
         c1_bar.set_label("u", rotation=0)
         ax1.set_ylabel("z")
-        ax1.set_xlabel("x")
+        ax1.set_xlabel("y")
 
         c2 = ax2.contourf(xx, zz, np.transpose(w), levels=np.linspace(-w_lim, w_lim, 51), cmap='RdBu_r')
         c2_bar = fig.colorbar(c2, ax=ax2)
         c2_bar.set_label("w", rotation=0)
         ax2.set_ylabel("z")
-        ax2.set_xlabel("x")
+        ax2.set_xlabel("y")
 
         #c3 = ax3.contourf(xx, zz, np.transpose(T), levels=np.linspace(0, max_T, 51), cmap='OrRd')
         #c3_bar = fig.colorbar(c3, ax=ax3)
@@ -350,7 +350,7 @@ if plot_snapshots:
         # ax = plt.gca().add_artist(legend)
         # plt.tight_layout()
 
-        print("Saving snapshot image {}/{}".format(i+1, len(u_all[:,0,0])))
+        print("Saving snapshot image {}/{}".format(i+1, len(v_all[:,0,0])))
 
         plt.close()
         plt.clf()
