@@ -29,11 +29,19 @@ if os.path.exists(save_direc) == False:
 with h5py.File(direc + "run_parameters/run_parameters_" + run_name + ".h5", mode='r') as file:
     Pr = file['tasks']['Pr'][0][0][0]
     Ra = file['tasks']['Ra'][0][0][0]
-    Ly = int(file['tasks']['Ly'][0][0][0])
+    Lx = int(file['tasks']['Lx'][0][0][0])
     Lz = int(file['tasks']['Lz'][0][0][0])
     Nx = int(file['tasks']['Nx'][0][0][0])
     Nz = int(file['tasks']['Nz'][0][0][0])
-    y = np.linspace(0,Ly,Ny)
+<<<<<<< HEAD
+    x = np.linspace(0,Lx,Nx)
+=======
+<<<<<<< HEAD
+    x = np.linspace(0,Lx,Nx)
+=======
+    y = np.linspace(0,Lx,Ny)
+>>>>>>> 9138d821e1756bebe2e24ab74bff44a65372648a
+>>>>>>> 9bc2b923a1ba3c81f9de17665e6b5355638888e8
     # z = np.linspace(0,Lz,Nz)
 
     z_basis = de.Chebyshev('z', 128, interval=(0,1), dealias=3/2)
