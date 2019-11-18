@@ -33,7 +33,7 @@ with h5py.File(direc + "run_parameters/run_parameters_" + run_name + ".h5", mode
     Lz = int(file['tasks']['Lz'][0][0][0])
     Nx = int(file['tasks']['Nx'][0][0][0])
     Nz = int(file['tasks']['Nz'][0][0][0])
-    x = np.linspace(0,Lx,Nx)
+    x = np.linspace(0, Lx, Nx)
     # z = np.linspace(0,Lz,Nz)
 
     z_basis = de.Chebyshev('z', 64, interval=(0,1), dealias=3/2)
