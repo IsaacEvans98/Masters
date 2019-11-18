@@ -89,10 +89,10 @@ min_w = np.min(w_all)
 max_w = np.min(w_all)
 #max_T = np.max(T_all)
 
-if abs(min_u) >= abs(max_u):
-    u_lim = abs(min_v)
+if abs(min_v) >= abs(max_v):
+    v_lim = abs(min_v)
 else:
-    u_lim = abs(max_v)
+    v_lim = abs(max_v)
 if abs(min_w) >= abs(max_w):
     w_lim = abs(min_w)
 else:
