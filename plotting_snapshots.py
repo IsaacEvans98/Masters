@@ -21,7 +21,7 @@ plot_snapshots = True
 # KE plot to see when the simulation has equilibrated, then running again with
 # plot_fluxes = True, and sensible values for the two parameters below.
 avg_t_start = 0.6
-avg_t_stop  = 0.85
+avg_t_stop  = 0.80
 
 if os.path.exists(save_direc) == False:
     pathlib.Path(save_direc).mkdir(parents=True)
