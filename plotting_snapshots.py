@@ -302,7 +302,7 @@ if plot_snapshots:
         ax2.set_ylabel("z")
         ax2.set_xlabel("y")
 
-        c3 = ax3.contourf(xx, zz, np.transpose(s), levels=np.linspace(0, max_s, 51), cmap='OrRd')
+        c3 = ax3.contourf(yy, zz, np.transpose(s), levels=np.linspace(0, max_s, 51), cmap='OrRd')
         c3_bar = fig.colorbar(c3, ax=ax3)
         c3_bar.set_label("s", rotation=0)
         ax3.set_ylabel("z")
