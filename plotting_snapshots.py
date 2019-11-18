@@ -64,7 +64,7 @@ with h5py.File(direc + "analysis/analysis_" + run_name + ".h5", mode='r') as fil
 with h5py.File(direc + "snapshots/snapshots_" + run_name + ".h5", mode='r') as file:
     v_all = np.array(file['tasks']['v'])
     w_all = np.array(file['tasks']['w'])
-    #T_all = np.array(file['tasks']['T'])
+    s_all = np.array(file['tasks']['s'])
     snap_t = np.array(file['scales']['sim_time'])
     snap_iter = np.array(file['scales']['iteration'])
 
@@ -87,7 +87,7 @@ min_v = np.min(v_all)
 max_v = np.max(v_all)
 min_w = np.min(w_all)
 max_w = np.min(w_all)
-#max_T = np.max(T_all)
+max_s = np.max(s_all)
 
 if abs(min_v) >= abs(max_v):
     v_lim = abs(min_v)
