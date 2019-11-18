@@ -36,7 +36,7 @@ with h5py.File(direc + "run_parameters/run_parameters_" + run_name + ".h5", mode
     x = np.linspace(0,Lx,Nx)
     # z = np.linspace(0,Lz,Nz)
 
-    z_basis = de.Chebyshev('z', 128, interval=(0,1), dealias=3/2)
+    z_basis = de.Chebyshev('z', 64, interval=(0,1), dealias=3/2)
     z = np.array(z_basis.grid(1))
 
     xx, zz = np.meshgrid(x,z)
