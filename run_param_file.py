@@ -4,8 +4,8 @@ Parameter file for use in the Dedalus 2D anelastic convection script.
 
 import numpy as np
 
-Lx, Lz = 4, 1                       # Domain size
-Nx, Nz = 256, 128                    # Number of
+Lx, Lz = 2, 1                       # Domain size
+Nx, Nz = 128, 64                    # Number of
 Pr = 1.                             # Prandtl number
 Pm = 1.                             # Magnetic Prandtl number
 Ra = 4e5                         # Rayleigh number
