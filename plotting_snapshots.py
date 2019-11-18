@@ -186,14 +186,14 @@ if plot_fluxes:
 
 if plot_final_state:
 
-    u = u_all[-1,:,:]
+    v = v_all[-1,:,:]
     w = w_all[-1,:,:]
     #T = T_all[-1,:,:]
 
-    if abs(np.min(u)) >= np.max(u):
-        uf_lim = abs(np.min(u))
+    if abs(np.min(v)) >= np.max(v):
+        vf_lim = abs(np.min(v))
     else:
-        uf_lim = np.max(u)
+        vf_lim = np.max(v)
     if abs(np.min(w)) >= np.max(w):
         wf_lim = abs(np.min(w))
     else:
