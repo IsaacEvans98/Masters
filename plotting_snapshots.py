@@ -290,13 +290,13 @@ if plot_snapshots:
         ax3 = fig.add_subplot(gs[1,0])
         ax4 = fig.add_subplot(gs[1,1])
 
-        c1 = ax1.contourf(xx, zz, np.transpose(v), levels=np.linspace(-v_lim, v_lim, 51), cmap='RdBu_r')
+        c1 = ax1.contourf(yy, zz, np.transpose(v), levels=np.linspace(-v_lim, v_lim, 51), cmap='RdBu_r')
         c1_bar = fig.colorbar(c1, ax=ax1)
         c1_bar.set_label("u", rotation=0)
         ax1.set_ylabel("z")
         ax1.set_xlabel("y")
 
-        c2 = ax2.contourf(xx, zz, np.transpose(w), levels=np.linspace(-w_lim, w_lim, 51), cmap='RdBu_r')
+        c2 = ax2.contourf(yy, zz, np.transpose(w), levels=np.linspace(-w_lim, w_lim, 51), cmap='RdBu_r')
         c2_bar = fig.colorbar(c2, ax=ax2)
         c2_bar.set_label("w", rotation=0)
         ax2.set_ylabel("z")
