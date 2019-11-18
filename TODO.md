@@ -5,4 +5,5 @@
   3. Enter password
 - [x] Add in y-component of the momentum equation
 - [x] Setup git repository  
-- [] run a simulation with Coriolis term included to verify correct orientation of axis 
+- [] run a simulation with Coriolis term included to verify correct orientation of axis
+- [] Save copies of run_param files with corresponding simulations to easily access various parameters of the problem
