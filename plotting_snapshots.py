@@ -39,7 +39,7 @@ with h5py.File(direc + "run_parameters/run_parameters_" + run_name + ".h5", mode
     z_basis = de.Chebyshev('z', 128, interval=(0,1), dealias=3/2)
     z = np.array(z_basis.grid(1))
 
-    xx, zz = np.meshgrid(x,z)
+    yy, zz = np.meshgrid(y,z)
 
     print("Ra = {}".format(Ra))
     print("Pr = {}".format(Pr))
