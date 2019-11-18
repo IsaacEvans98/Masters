@@ -275,7 +275,7 @@ if plot_snapshots:
     if os.path.exists(save_direc + "snapshots/") == False:
         pathlib.Path(save_direc + "snapshots/").mkdir(parents=True)
 
-    for i in range(0,len(v_all[:,0,0]),30):
+    for i in range(0,len(u_all[:,0,0]),30):
 
         u = u_all[i,:,:]
         w = w_all[i,:,:]
