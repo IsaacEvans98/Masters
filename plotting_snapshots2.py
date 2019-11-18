@@ -198,9 +198,9 @@ if plot_final_state:
     plt.tight_layout()
 
 
-     plt.savefig(save_direc + "final_state")
-     plt.close()
-     plt.clf()
+    plt.savefig(save_direc + "final_state")
+    plt.close()
+    plt.clf()
 
 if plot_snapshots:
 
