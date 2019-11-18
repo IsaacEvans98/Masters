@@ -47,7 +47,7 @@ with h5py.File(direc + "run_parameters/run_parameters_" + run_name + ".h5", mode
 with h5py.File(direc + "analysis/analysis_" + run_name + ".h5", mode='r') as file:
     L_cond_all = np.array(file['tasks']['L_cond'])[:,0,:]
     L_conv_all = np.array(file['tasks']['L_conv'])[:,0,:]
-    KE = np.array(file['tasks']['KE_avg'])[:,0,0]
+    KE = np.array(file['tasks']['KE'])[:,0,0]
     ana_t = np.array(file['scales']['sim_time'])
 
 with h5py.File(direc + "snapshots/snapshots_" + run_name + ".h5", mode='r') as file:
