@@ -49,11 +49,12 @@ with h5py.File(direc + "analysis/analysis_" + run_name + ".h5", mode='r') as fil
     L_conv_all = np.array(file['tasks']['L_conv'])[:,0,:]
     KE = np.array(file['tasks']['KE'])[:,0,0]
     ana_t = np.array(file['scales']['sim_time'])
+    s = np.array(file['tasks']['<s>_x'])[:,0,:]
 
 with h5py.File(direc + "snapshots/snapshots_" + run_name + ".h5", mode='r') as file:
     u_all = np.array(file['tasks']['u'])
     w_all = np.array(file['tasks']['w'])
-    T_all = np.array(file['tasks']['T'])
+    s_all = np.array(file['tasks']['T'])
     snap_t = np.array(file['scales']['sim_time'])
     snap_iter = np.array(file['scales']['iteration'])
 
