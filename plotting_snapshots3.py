@@ -122,7 +122,7 @@ if plot_fluxes:
 
     plt.plot(mean_L_cond,z, 'r', linestyle='-', label="$L_{cond}$")
     plt.plot(mean_L_diss,z, 'g', linestyle='-', label="$L_{diss}$")
-    plt.plot(mean_L_buoy,z, 'b', linestyle='-', label="$L_{buoy}$")
+    plt.plot(mean_L_buoy,z, 'm', linestyle='-', label="$L_{buoy}$")
     plt.plot(mean_L_conv,z, 'g', linestyle='-', label="$L_{conv}$")
     plt.plot(mean_L_tot,z, 'k', linestyle='-',  label="$L_{total}$")
     plt.xlabel("L")
