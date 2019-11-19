@@ -11,7 +11,7 @@ Pm = 1.                             # Magnetic Prandtl number
 Ra = 3.8e5                         # Rayleigh number
 Np = 0
 Ta =5e5
-latitude = np.pi / 3                     # Number of density scale heights
+latitude = np.pi / 2                      # Number of density scale heights
 m = 1.5                             # Polytropic index
 theta = 1 - np.exp(-Np/m)           # Dimensionaless inverse T scale height
 
