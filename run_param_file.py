@@ -11,7 +11,7 @@ Pm = 1.                             # Magnetic Prandtl number
 Ra = 4e5                       # Rayleigh number
 Np = 0.1
 Ta =5e5
-latitude = np.pi / 4                      # Number of density scale heights
+latitude = np.pi / 3                      # Number of density scale heights
 m = 1.5                             # Polytropic index
 theta = 1 - np.exp(-Np/m)           # Dimensionaless inverse T scale height
 
@@ -23,4 +23,4 @@ analysis_freq = 1.5e-4              # Frequency analysis files are outputted
 
 end_sim_time = 2.                   # Stop time in simulations units
 end_wall_time = np.inf              # Stop time in wall time
-end_iterations = np.inf             # Stop time in iterations I'm a nonce
+end_iterations = np.inf             # Stop time in iterations
