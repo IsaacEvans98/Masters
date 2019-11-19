@@ -210,7 +210,7 @@ analysis.add_task(" (integ( integ( 2*rho_ref*( \
 analysis.add_task(" integ( (integ(rho_ref*T_ref*s*w,'x')/Lx)/T_ref, 'z')*Pr*theta/Lz ", layout='g', name='E_F_conv')
 
 # Mean KE
-analysis.add_task(" integ( (integ(0.5*(u*u + w*w)*rho_ref,'x')/Lx), 'z')/Lz", layout='g', name='KE')
+analysis.add_task(" integ( (integ(0.5*(u*u + w*w + v*v)*rho_ref,'x')/Lx), 'z')/Lz", layout='g', name='KE')
 
 # Creating a parameter file
 run_parameters = solver.evaluator.add_file_handler(save_direc + 'run_parameters', wall_dt=1e20, max_writes=1)
