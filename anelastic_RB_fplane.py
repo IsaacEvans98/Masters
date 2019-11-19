@@ -173,7 +173,7 @@ CFL.add_velocities(('u', 'w'))
 
 # Flow properties
 flow = flow_tools.GlobalFlowProperty(solver, cadence=10)
-flow.add_property("sqrt(u*u + w*w)", name='Re')
+flow.add_property("sqrt(u*u + w*w + v*v)", name='Re')
 
 # Saving snapshots
 snapshots = solver.evaluator.add_file_handler(save_direc + 'snapshots', sim_dt=rpf.snapshot_freq, max_writes=50)
@@ -185,7 +185,7 @@ analysis.add_task("integ(s,'x')/Lx", layout='g', name='<s>_x')
 #analysis.add_task("integ(T,'x')/Lx", layout='g', name='<T>_x')
 
 # Mean Reynolds number
-analysis.add_task("integ( integ( sqrt(u*u + w*w) , 'x')/Lx, 'z')/Lz", layout='g', name='Re')
+analysis.add_task("integ( integ( sqrt(u*u + w*w + v*v) , 'x')/Lx, 'z')/Lz", layout='g', name='Re')
 
 # Flux decomposition - Internal energy equation
 analysis.add_task("integ(rho_ref*T_ref*s*w,'x')*Pr/Lx", layout='g', name='L_conv')
@@ -194,7 +194,7 @@ analysis.add_task("integ(L_buoy - interp(L_buoy,z=0),'x')*(-Pr*theta)/Lx", layou
 analysis.add_task("integ(L_diss - interp(L_diss,z=0),'x')*((Pr*Pr*theta)/Ra)/Lx", layout='g', name='L_diss')
 
 # Flux decomposition - Total energy equation (L_conv and L_cond already outputted)
-analysis.add_task("integ(0.5*rho_ref*(u*u + w*w)*w, 'x')*((Pr*Pr*theta)/Ra)/Lx", layout='g', name='L_KE')
+analysis.add_task("integ(0.5*rho_ref*(u*u + w*w + v*v)*w, 'x')*((Pr*Pr*theta)/Ra)/Lx", layout='g', name='L_KE')
 analysis.add_task("integ((-1)*rho_ref*(u*(uz + dx(w) ) \
                     + (2/3)*w*(2*wz - dx(u) )), 'x')*((Pr*Pr*theta)/Ra)/Lx", layout='g', name='L_visc')
 analysis.add_task("integ(p*w, 'x')*((Pr*Pr*theta)/Ra)/Lx", layout='g', name='L_p')
