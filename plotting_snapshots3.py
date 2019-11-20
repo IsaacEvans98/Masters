@@ -168,7 +168,7 @@ if plot_fluxes:
     plt.plot(mean_L_tot2,z, 'k', linestyle='-',  label="$L_{total}$")
     plt.xlabel("L")
     plt.ylabel("z")
-    plt.title("(Ny, Nz) = ({}, {}), Ra = {:.2e}, \nPr = {:.2f}, Time average = {:.2f} ".format(Nx,Nz,Ra,Pr,avg_t_range) + r"$\tau_\nu$")
+    plt.title("(Nx, Nz) = ({}, {}), Ra = {:.2e}, \nPr = {:.2f}, Time average = {:.2f} ".format(Nx,Nz,Ra,Pr,avg_t_range) + r"$\tau_\nu$")
     plt.legend()
     plt.savefig(save_direc + 'intE_fluxes2')
     plt.clf()
