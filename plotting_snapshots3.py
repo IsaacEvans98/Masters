@@ -62,6 +62,8 @@ with h5py.File(direc + "analysis/analysis_" + run_name + ".h5", mode='r') as fil
     ana_t = np.array(file['scales']['sim_time'])
 #    Tx = np.array(file['tasks']['<T>_x'][:,0,:])
 #    Tx_z = np.array(file['tasks']['<Tz>_x'][:,0,:])
+    s = np.array(file['tasks']['<s>_x'])[:,0,:]
+
     Sx_all = np.array(file['tasks']['<s>_x'])
 
 with h5py.File(direc + "snapshots/snapshots_" + run_name + ".h5", mode='r') as file:
