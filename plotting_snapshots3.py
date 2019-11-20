@@ -158,7 +158,7 @@ if plot_fluxes:
     mean_L_tot2 = mean_L_KE + mean_L_visc + mean_L_p + mean_L_enth
 
     del_L_tot2   = np.max(np.absolute(mean_L_tot2   - 1))
-    print("Max variation in L_tot (Total Energy): {:.5f}".format(del_L_tot))
+    print("Max variation in L_tot (Total Energy): {:.5f}".format(del_L_tot2))
 
     plt.plot(mean_L_KE,z, 'r', linestyle='-', label="$L_{KE}$")
     plt.plot(mean_L_visc,z, 'g', linestyle='-', label="$L_{visc}$")
