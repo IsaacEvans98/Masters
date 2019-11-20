@@ -112,7 +112,7 @@ plt.clf()
 
 if plot_fluxes:
 
-if plot_fluxes:
+
 
     mean_L_cond = np.mean(np.array(L_cond_all[ASI:AEI,:]), axis=0)
     mean_L_conv = np.mean(np.array(L_conv_all[ASI:AEI,:]), axis=0)
