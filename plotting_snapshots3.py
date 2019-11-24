@@ -115,6 +115,14 @@ plt.ylim(0, np.max(KE)*1.1)
 plt.close()
 plt.clf()
 
+plt.plot(ana_t,Re)
+plt.ylabel("Re")
+plt.xlabel(r"Time / $\tau_\nu$")
+plt.xlim(0,ana_t[-1])
+plt.ylim(0, np.max(Re)*1.1)
+plt.close()
+plt.clf()
+
 if plot_fluxes:
 
 
@@ -152,7 +160,7 @@ if plot_fluxes:
     plt.plot(mean_L_tot,z, 'k', linestyle='-',  label="$L_{total}$")
     plt.xlabel("L")
     plt.ylabel("z")
-    plt.title("(Nx, Nz) = ({}, {}), Ra = {:.2e}, \nPr = {:.2f}, Time average = {:.2f}, \nTa ={:.2e}, ".format(Nx,Nz,Ra,Pr,avg_t_range,Ta) + r"$\tau_\nu$")
+    plt.title("(Nx, Nz) = ({}, {}), Ra = {:.2e}, \nPr = {:.2f}, Ta ={:.2e},  \nTime average = {:.2f}, ".format(Nx,Nz,Ra,Pr,Ta,avg_t_range) + r"$\tau_\nu$")
     plt.legend()
     plt.savefig(save_direc + 'intE_fluxes')
     plt.clf()
@@ -285,9 +293,9 @@ if plot_final_state:
     # plt.tight_layout()
     #
     #
-    # plt.savefig(save_direc + "final_state")
-    # plt.close()
-    # plt.clf()
+     plt.savefig(save_direc + "final_state")
+     plt.close()
+     plt.clf()
 
 if plot_snapshots:
 
