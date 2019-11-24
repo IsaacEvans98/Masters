@@ -36,6 +36,7 @@ with h5py.File(direc + "run_parameters/run_parameters_" + run_name + ".h5", mode
     Lz = int(file['tasks']['Lz'][0][0][0])
     Nx = int(file['tasks']['Nx'][0][0][0])
     Nz = int(file['tasks']['Nz'][0][0][0])
+    Ta = file['tasks']['Ta'][0][0][0]
 
     x = np.linspace(0,Lx,Nx)
     # z = np.linspace(0,Lz,Nz)
@@ -63,6 +64,7 @@ with h5py.File(direc + "analysis/analysis_" + run_name + ".h5", mode='r') as fil
 #    Tx = np.array(file['tasks']['<T>_x'][:,0,:])
 #    Tx_z = np.array(file['tasks']['<Tz>_x'][:,0,:])
     s = np.array(file['tasks']['<s>_x'])[:,0,:]
+    Re = np.array(file['tasks']['Re'])[:,0,:]
 
     Sx_all = np.array(file['tasks']['<s>_x'])
 
@@ -149,7 +151,7 @@ if plot_fluxes:
     plt.plot(mean_L_tot,z, 'k', linestyle='-',  label="$L_{total}$")
     plt.xlabel("L")
     plt.ylabel("z")
-    plt.title("(Nx, Nz) = ({}, {}), Ra = {:.2e}, \nPr = {:.2f}, Time average = {:.2f} ".format(Nx,Nz,Ra,Pr,avg_t_range) + r"$\tau_\nu$")
+    plt.title("(Nx, Nz) = ({}, {}), Ra = {:.2e}, \nPr = {:.2f}, Time average = {:.2f}, \nTa ={:.2e}, Max Re = {:.2e} ".format(Nx,Nz,Ra,Pr,avg_t_range,Ta,Re) + r"$\tau_\nu$")
     plt.legend()
     plt.savefig(save_direc + 'intE_fluxes')
     plt.clf()
