@@ -116,7 +116,7 @@ plt.savefig(save_direc + "KE")
 plt.close()
 plt.clf()
 
-plt.plot(ana_t,Re)
+plt.plot(ana_t,Re, 'r')
 plt.ylabel("Re")
 plt.xlabel(r"Time / $\tau_\nu$")
 plt.xlim(0,ana_t[-1])
