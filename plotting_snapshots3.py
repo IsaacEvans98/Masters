@@ -49,6 +49,7 @@ with h5py.File(direc + "run_parameters/run_parameters_" + run_name + ".h5", mode
     print("Ra = {}".format(Ra))
     print("Pr = {}".format(Pr))
     print("(Nx,Nz) = ({},{})".format(Nx,Nz))
+    print("Ta = {}".format(Ta))
 
 with h5py.File(direc + "analysis/analysis_" + run_name + ".h5", mode='r') as file:
     L_cond_all = np.array(file['tasks']['L_cond'])[:,0,:]
@@ -151,7 +152,7 @@ if plot_fluxes:
     plt.plot(mean_L_tot,z, 'k', linestyle='-',  label="$L_{total}$")
     plt.xlabel("L")
     plt.ylabel("z")
-    plt.title("(Nx, Nz) = ({}, {}), Ra = {:.2e}, \nPr = {:.2f}, Time average = {:.2f}, \nTa ={:.2e}, Max Re = {:.2e} ".format(Nx,Nz,Ra,Pr,avg_t_range,Ta,Re) + r"$\tau_\nu$")
+    plt.title("(Nx, Nz) = ({}, {}), Ra = {:.2e}, \nPr = {:.2f}, Time average = {:.2f}, \nTa ={:.2e}, ".format(Nx,Nz,Ra,Pr,avg_t_range,Ta) + r"$\tau_\nu$")
     plt.legend()
     plt.savefig(save_direc + 'intE_fluxes')
     plt.clf()
