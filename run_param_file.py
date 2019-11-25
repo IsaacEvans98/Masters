@@ -8,10 +8,10 @@ Lx, Lz = 2, 1                       # Domain size
 Nx, Nz = 128, 64                    # Number of
 Pr = 1.                             # Prandtl number
 Pm = 1.                             # Magnetic Prandtl number
-Ra = 5e4                       # Rayleigh number
-Np = 0
+Ra = 4e4                       # Rayleigh number
+Np = 1.5
 Ta =5e4
-latitude = 0                    # Number of density scale heights
+latitude = np.pi / 2.5                   # Number of density scale heights
 m = 1.5                             # Polytropic index
 theta = 1 - np.exp(-Np/m)           # Dimensionaless inverse T scale height
 
