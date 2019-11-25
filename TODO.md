@@ -7,6 +7,6 @@
 - [x] Setup git repository  
 - [] run a simulation with Coriolis term included to verify correct orientation of axis
 - [x] Save copies of run_param files with corresponding simulations to easily access various parameters of the problem
-- [] Rename folders containing resulting figures to easily identify which parameters were used
+- [x] Rename folders containing resulting figures to easily identify which parameters were used
 - [] print figures from simulations of interest to refer to in lab book
-- [] Upload rotational results to the shared github repository
+- [x] Upload rotational results to the shared github repository
