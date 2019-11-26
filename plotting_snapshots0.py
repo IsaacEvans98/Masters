@@ -11,8 +11,8 @@ import os
 
 #direc="raw_data/"
 #direc = sys.argv[1] + "/" + sys.argv[1] + "_raw_data/"
-direc = "raw_data/"
-save_direc = "figs/"
+direc = "raw_data2/"
+save_direc = "figs2/"
 run_name = "test1"
 
 plot_fluxes = True
