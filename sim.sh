@@ -3,6 +3,12 @@
 source /opt/Miniconda/miniconda37/etc/profile.d/conda.sh
 conda activate dedalus
 
-mpiexec -n 4  python3 anelastic_RB_fplane.py
+mpiexec -n 4 python3 anelastic_RB_fplane.py
 
-exit
+# python3 rayleigh_benard.py
+python3 merge.py raw_data/snapshots --cleanup
+python3 merge.py raw_data/analysis --cleanup
+python3 merge.py raw_data/run_parameters --cleanup
+python3 merge_single.py
+
+python3 plotting_snapshots.py
