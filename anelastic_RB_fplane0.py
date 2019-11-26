@@ -31,9 +31,9 @@ import pathlib
 import logging
 logger = logging.getLogger(__name__)
 
-import run_param_file0 as rpf   # Imports a parameter file "run_param_file.py"
+import run_param_file as rpf   # Imports a parameter file "run_param_file.py"
 
-save_direc = "raw_data2/"
+save_direc = "raw_data/"
 pathlib.Path(save_direc).mkdir(parents=True, exist_ok=True)
 
 
@@ -119,7 +119,7 @@ problem.add_equation("  T_ref*( Pr*dt(s) - dx(dx(s)) - dz(sz) ) + theta*(m+1)*sz
 
 # Flux equations for use in analysis outputs
 problem.add_equation("  dz(L_buoy) = -s*rho_ref*w")
-problem.add_equation("  dz(L_diss) = -2*rho_ref*( (dx(u))**2 + wz**2 + (1/2)*( uz**2 + dx(w)**2 ) + dx(w)*uz - (1/3)*( dx(u) + wz )**2 )")
+problem.add_equation("  dz(L_diss) = -2*rho_ref*( dx(u)*dx(u) + wz*wz + uz*dx(w) - (1/3)*(dx(u)+wz)*(dx(u)+wz) + (1/2)*(uz*uz + dx(w)*dx(w) + dx(v)*dx(v) + vz*vz) )")
 
 problem.add_bc("left(w) = 0")            # Impermeable bottom boundary
 problem.add_bc("right(w) = 0", condition="(nx != 0)")   # Impermeable top boundary
