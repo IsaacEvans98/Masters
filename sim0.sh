@@ -11,6 +11,3 @@ python3 merge.py raw_data2/run_parameters --cleanup
 python3 merge_single0.py
 
 python3 plotting_snapshots0.py
-
-
-exit
