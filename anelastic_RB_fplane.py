@@ -96,12 +96,12 @@ problem.add_equation("vz - dz(v) = 0")
 problem.add_equation("  (1-theta*z)*(dx(u) + wz) - theta*m*w = 0 ")
 
 # x-component of the momentum equation
-problem.add_equation("  rho_ref*( dt(u) - (4/3)*dx(dx(u)) - dz(uz) - (1/3)*dx(wz) - (Ta)**(0.5)*(v*cos(phi))  )  + dx(p) \
+problem.add_equation("  rho_ref*( dt(u) - (4/3)*dx(dx(u)) - dz(uz) - (1/3)*dx(wz) + (Ta)**(0.5)*(v*cos(phi))  )  + dx(p) \
                         - dz_rho_ref*( uz + dx(w) ) \
                         = -rho_ref*(u*dx(u) + w*uz )   ")
 
 #y-component of the momentum equation
-problem.add_equation(" rho_ref*(dt(v) - dx(dx(v)) - dz(vz)  + (Ta)**(0.5)*(u*cos(phi) - w*sin(phi))  ) \
+problem.add_equation(" rho_ref*(dt(v) - dx(dx(v)) - dz(vz)  - (Ta)**(0.5)*(u*cos(phi) - w*sin(phi))  ) \
                        - dz_rho_ref*(vz) \
                        = -rho_ref*( u*dx(v) + w*vz )   ")
 
