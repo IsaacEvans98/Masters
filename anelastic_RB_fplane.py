@@ -47,6 +47,7 @@ Ta = rpf.Ta
 phi = rpf.latitude
 m = rpf.m
 theta = rpf.theta
+Roc = rpf.Roc
 
 # Create bases and domain
 x_basis = de.Fourier('x', Nx, interval=(0, Lx), dealias=3/2)   # Fourier basis in the x
@@ -69,6 +70,7 @@ problem.parameters['theta'] = theta
 problem.parameters['phi'] = phi
 problem.parameters['X'] = Ra/Pr
 problem.parameters['Y'] = (Pr*Pr*theta) / Ra
+problem.parameters['Roc'] = np.sqrt((Ra)/(Ta*Pr))
 
 
 # Non-constant coeffiecents
@@ -188,7 +190,6 @@ analysis.add_task("integ(s,'x')/Lx", layout='g', name='<s>_x')
 # Mean Reynolds number
 analysis.add_task("integ( integ( sqrt(u*u + w*w + v*v) , 'x')/Lx, 'z')/Lz", layout='g', name='Re')
 
-analysis.add_task("np.sqrt((Ra)/(Ta*Pr)", layout='g', name='Roc')
 
 # Flux decomposition - Internal energy equation
 analysis.add_task("integ(rho_ref*T_ref*s*w,'x')*Pr/Lx", layout='g', name='L_conv')
@@ -227,6 +228,7 @@ run_parameters.add_task(m,  name="m")
 run_parameters.add_task(Nx, name="Nx")
 run_parameters.add_task(Nz, name="Nz")
 run_parameters.add_task("z", layout='g', name="z_grid")
+run_parameters.add_task(Roc, name="Roc")
 
 run_parameters.add_task(rpf.snapshot_freq, name="snap_freq")
 run_parameters.add_task(rpf.analysis_freq, name="ana_freq")

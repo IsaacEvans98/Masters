@@ -14,6 +14,8 @@ Ta = 5e6
 latitude = np.pi / 4                  # Number of density scale heights
 m = 1.5                             # Polytropic index
 theta = 1 - np.exp(-Np/m)           # Dimensionaless inverse T scale height
+Roc = np.sqrt((Ra)/(Ta*Pr))
+
 
 initial_timestep = 2e-5                 # Initial timestep
 max_dt = 1e-4                         # max dt
