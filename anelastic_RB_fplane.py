@@ -69,6 +69,7 @@ problem.parameters['theta'] = theta
 problem.parameters['phi'] = phi
 problem.parameters['X'] = Ra/Pr
 problem.parameters['Y'] = (Pr*Pr*theta) / Ra
+problem.parameters['Ro'] = np.sqrt((Ra)/(Ta*Pr))
 
 # Non-constant coeffiecents
 rho_ref = domain.new_field(name='rho_ref')
