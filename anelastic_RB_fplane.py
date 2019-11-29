@@ -195,7 +195,7 @@ analysis.add_task("integ(L_diss - interp(L_diss,z=0),'x')*((Pr*Pr*theta)/Ra)/Lx"
 
 # Flux decomposition - Total energy equation (L_conv and L_cond already outputted)
 analysis.add_task("integ(0.5*rho_ref*(u*u + w*w + v*v)*w, 'x')*((Pr*Pr*theta)/Ra)/Lx", layout='g', name='L_KE')
-analysis.add_task("integ((-1)*rho_ref*(u*(uz + dx(w) ) \
+analysis.add_task("integ((-1)*rho_ref*( v*vz + u*(uz + dx(w)  ) \
                     + (2/3)*w*(2*wz - dx(u) )), 'x')*((Pr*Pr*theta)/Ra)/Lx", layout='g', name='L_visc')
 analysis.add_task("integ(p*w, 'x')*((Pr*Pr*theta)/Ra)/Lx", layout='g', name='L_p')
 
