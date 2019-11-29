@@ -69,7 +69,7 @@ problem.parameters['theta'] = theta
 problem.parameters['phi'] = phi
 problem.parameters['X'] = Ra/Pr
 problem.parameters['Y'] = (Pr*Pr*theta) / Ra
-problem.parameters['Ro'] = np.sqrt((Ra)/(Ta*Pr))
+
 
 # Non-constant coeffiecents
 rho_ref = domain.new_field(name='rho_ref')
@@ -187,6 +187,8 @@ analysis.add_task("integ(s,'x')/Lx", layout='g', name='<s>_x')
 
 # Mean Reynolds number
 analysis.add_task("integ( integ( sqrt(u*u + w*w + v*v) , 'x')/Lx, 'z')/Lz", layout='g', name='Re')
+
+analysis.add_task("np.sqrt((Ra)/(Ta*Pr)", layout='g', name='Roc')
 
 # Flux decomposition - Internal energy equation
 analysis.add_task("integ(rho_ref*T_ref*s*w,'x')*Pr/Lx", layout='g', name='L_conv')
