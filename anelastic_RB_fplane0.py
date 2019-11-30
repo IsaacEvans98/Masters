@@ -31,7 +31,7 @@ import pathlib
 import logging
 logger = logging.getLogger(__name__)
 
-import run_param_file as rpf   # Imports a parameter file "run_param_file.py"
+import run_param_file0 as rpf   # Imports a parameter file "run_param_file.py"
 
 save_direc = "raw_data2/"
 pathlib.Path(save_direc).mkdir(parents=True, exist_ok=True)
