@@ -7,8 +7,8 @@ import sys
 import pathlib
 import os
 
-direc = "raw_data/"
-save_direc = "figs/"
+direc = "raw_data3/"
+save_direc = "figs3/"
 run_name = "test1"
 
 plot_fluxes = True
