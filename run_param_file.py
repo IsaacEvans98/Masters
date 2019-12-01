@@ -10,11 +10,11 @@ Pr = 1.                             # Prandtl number
 Pm = 1.                             # Magnetic Prandtl number
 Ra = 3.8e4                       # Rayleigh number
 Np = 0
-Ta = 0
-latitude = 0                # Number of density scale heights
+#Ta = 0  #
+#latitude = 0                # Number of density scale heights
 m = 1.5                             # Polytropic index
 theta = 1 - np.exp(-Np/m)           # Dimensionaless inverse T scale height
-Roc = np.sqrt((Ra)/(Ta*Pr))
+#Roc = np.sqrt((Ra)/(Ta*Pr))
 
 
 initial_timestep = 2e-5                 # Initial timestep
