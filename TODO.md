@@ -10,3 +10,4 @@
 - [x] Rename folders containing resulting figures to easily identify which parameters were used
 - [] print figures from simulations of interest to refer to in lab book
 - [x] Upload rotational results to the shared github repository
+- [] Compare orientation of personal rotational code to Simon's to spot any inconsistencies

@@ -24,7 +24,7 @@ plot_snapshots = True
 # KE plot to see when the simulation has equilibrated, then running again with
 # plot_fluxes = True, and sensible values for the two parameters below.
 avg_t_start = 0.01
-avg_t_stop  = 1.9
+avg_t_stop  = 1.5
 
 if os.path.exists(save_direc) == False:
     pathlib.Path(save_direc).mkdir(parents=True)
@@ -168,7 +168,7 @@ if plot_fluxes:
     plt.clf()
     plt.close()
 
-    mean_L_tot2 = mean_L_cond + mean_L_visc + mean_L_KE + mean_L_enth
+    mean_L_tot2 = mean_L_KE + mean_L_visc + mean_L_p + mean_L_enth
 
     del_L_tot2   = np.max(np.absolute(mean_L_tot2   - 1))
     print("Max variation in L_tot (Total Energy): {:.5f}".format(del_L_tot2))
