@@ -98,6 +98,12 @@ min_w = np.min(w_all)
 max_w = np.min(w_all)
 mean_u = np.mean(np.array(u_all))
 mean_w = np.mean(np.array(w_all))
+u_fluc = (u_all) - (mean_u)
+w_fluc = (w_all) - (mean_w)
+min_u_fluc = np.min(u_fluc)
+max_u_fluc = np.max(u_fluc)
+min_w_fluc = np.min(w_fluc)
+max_w_fluc = np.max(w_fluc)
 
 ## max_T = np.max(T_all)
 
