@@ -96,6 +96,9 @@ min_u = np.min(u_all)
 max_u = np.max(u_all)
 min_w = np.min(w_all)
 max_w = np.min(w_all)
+mean_u = np.mean(np.array(u_all))
+mean_w = np.mean(np.array(w_all))
+
 ## max_T = np.max(T_all)
 
 if abs(min_u) >= abs(max_u):
@@ -391,3 +394,7 @@ if plot_snapshots:
 
         plt.close()
         plt.clf()
+
+if plot_reynolds:
+    if os.path.exists(save_direc + "snapshots/") == False:
+        pathlib.Path(save_direc + "snapshots/").mkdir(parents=True)
