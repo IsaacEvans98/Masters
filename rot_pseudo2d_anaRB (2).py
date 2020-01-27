@@ -179,6 +179,12 @@ snapshots.add_system(solver.state)
 analysis = solver.evaluator.add_file_handler(save_direc + 'analysis', sim_dt=rpf.analysis_freq, max_writes=5000)
 analysis.add_task("integ(s,'y')/Ly", layout='g', name='<s>_y')
 
+
+# Reynolds stresses
+analysis.add_task("integ( integ(u , 'y')/Ly, 'z')/Lz", layout='g', name='u_avg')
+analysis.add_task("integ( integ(w , 'y')/Ly, 'z')/Lz", layout='g', name='w_avg')
+
+
 # Mean Reynolds number
 analysis.add_task("integ( integ( sqrt(u*u + v*v + w*w) , 'y')/Ly, 'z')/Lz", layout='g', name='Re')
 
