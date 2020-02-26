@@ -11,4 +11,4 @@ python3 merge.py raw_data/analysis --cleanup
 python3 merge.py raw_data/run_parameters --cleanup
 python3 merge_single.py
 
-python3 plotting_snapshots3.py
+python3 plotting_snapshots3.py 
