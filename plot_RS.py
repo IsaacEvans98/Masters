@@ -250,8 +250,12 @@ Ro_z = np.mean(np.array(Ro), axis=0)
 Ro_tot = 0
 count = 0
 for i in range(len(Ro_z)):
-	Ro_tot += Ro_z[i]
-	count += 1
+	# Chooses the middle half to average over
+	if ( (i / len(Ro_z)) > 0.25 and (i / len(Ro_z)) < 0.75):
+		Ro_tot += Ro_z[i]
+		count += 1
+	else:
+		continue
 
 Ro_glob_av = Ro_tot / count
 
@@ -276,7 +280,7 @@ plt.xlabel(r" Rossby number (Ro) ")
 plt.ylabel(r"$z$")
 plt.ylim(0, max(z))
 plt.xlim(find_limit (Ro_z))
-plt.vlines(Ro_glob_av, 0, max(z))
+plt.vlines(Ro_glob_av, 0, max(z), linestyles='dashed')
 plt.savefig(save_direc + "Ro_z.pdf")
 plt.close()
 plt.clf()
@@ -408,39 +412,6 @@ plt.savefig(save_direc + "RS_uv_t.pdf")
 plt.close()
 plt.clf()
 
-u_bar_z = np.mean(np.array(u_bar), axis=0)
-plt.plot(u_bar_z, z)
-plt.title(get_title (save_direc))
-plt.xlabel(r"$ \overline{u} $")
-plt.ylabel(r"$z$")
-plt.ylim(0,ana_t[-1])
-plt.xlim(find_limit (u_bar))
-plt.savefig(save_direc + "u_bar_z.pdf")
-plt.close()
-plt.clf()
-
-v_bar_z = np.mean(np.array(v_bar), axis=0)
-plt.plot(v_bar_z, z)
-plt.title(get_title (save_direc))
-plt.xlabel(r"$ \overline{u} $")
-plt.ylabel(r"$z$")
-plt.ylim(0,ana_t[-1])
-plt.xlim(find_limit (u_bar))
-plt.savefig(save_direc + "v_bar_z.pdf")
-plt.close()
-plt.clf()
-
-w_bar_z = np.mean(np.array(w_bar), axis=0)
-plt.plot(w_bar_z, z)
-plt.title(get_title (save_direc))
-plt.xlabel(r"$ \overline{u} $")
-plt.ylabel(r"$z$")
-plt.ylim(0,ana_t[-1])
-plt.xlim(find_limit (u_bar))
-plt.savefig(save_direc + "w_bar_z.pdf")
-plt.close()
-plt.clf()
-
 plt.plot(RS_uw_t, ana_t)
 plt.title(get_title (save_direc))
 plt.xlabel(r"$\left\langle\overline{uw}\right\rangle$")
@@ -533,6 +504,39 @@ plt.ylabel(r"z")
 plt.ylim(0,z[-1])
 plt.xlim(find_limit (grad_RS_vw))
 plt.savefig(save_direc + "grad_RS_vw.pdf")
+plt.close()
+plt.clf()
+
+u_bar_z = np.mean(np.array(u_bar), axis=0)
+plt.plot(u_bar_z, z)
+plt.title(get_title (save_direc))
+plt.xlabel(r"$ \overline{u} $")
+plt.ylabel(r"$z$")
+plt.ylim(0,ana_t[-1])
+plt.xlim(find_limit (u_bar))
+plt.savefig(save_direc + "u_bar_z.pdf")
+plt.close()
+plt.clf()
+
+v_bar_z = np.mean(np.array(v_bar), axis=0)
+plt.plot(v_bar_z, z)
+plt.title(get_title (save_direc))
+plt.xlabel(r"$ \overline{u} $")
+plt.ylabel(r"$z$")
+plt.ylim(0,ana_t[-1])
+plt.xlim(find_limit (u_bar))
+plt.savefig(save_direc + "v_bar_z.pdf")
+plt.close()
+plt.clf()
+
+w_bar_z = np.mean(np.array(w_bar), axis=0)
+plt.plot(w_bar_z, z)
+plt.title(get_title (save_direc))
+plt.xlabel(r"$ \overline{u} $")
+plt.ylabel(r"$z$")
+plt.ylim(0,ana_t[-1])
+plt.xlim(find_limit (u_bar))
+plt.savefig(save_direc + "w_bar_z.pdf")
 plt.close()
 plt.clf()
 
