@@ -282,6 +282,12 @@ dRS_vw = dRS_vw[:,0,:]
 u_bar = u_bar[:,0,:]
 v_bar = v_bar[:,0,:]
 w_bar = w_bar[:,0,:]
+u_bar2 = u_bar[:,0,:]
+v_bar2 = v_bar[:,0,:]
+w_bar2 = w_bar[:,0,:]
+u_bar3 = u_bar[:,0,:]
+v_bar3 = v_bar[:,0,:]
+w_bar3 = w_bar[:,0,:]
 
 arrays = [RS_uv, RS_uw, RS_vw, dRS_uv, dRS_uw, dRS_vw, u_bar, v_bar, w_bar]
 
