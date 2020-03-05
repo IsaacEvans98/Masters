@@ -22,7 +22,7 @@ from shutil import copy2
 #from run_param_file + sys.argv[1] import Np
 
 direc = "raw_data/"
-direc2 = "raw_data2/"
+#direc2 = "raw_data2/"
 direc3 = "raw_data3/"
 #save_direc = "figs_rot_only/Np=%.2f/Ra=%.2E/Ta=%.2E/Phi=%i/" % (Np, Decimal(Ra), Decimal(Ta), Decimal(Phi))
 run_name = "test1"
@@ -122,18 +122,18 @@ with h5py.File(direc + "snapshots/snapshots_" + run_name + ".h5", mode='r') as f
 	snap_t = np.array(file['scales']['sim_time'])
 	snap_iter = np.array(file['scales']['iteration'])
 
-with h5py.File(direc2 + "analysis/analysis_" + run_name + ".h5", mode='r') as file:
-	Re2 = np.array(file['tasks']['Re'])[:,0,:]                   ## NEW!!
-	RS_uv2 = np.array(file['tasks']['RS_xy'])
-	RS_uw2 = np.array(file['tasks']['RS_xz'])
-	RS_vw2 = np.array(file['tasks']['RS_yz'])
-	dRS_uv2 = np.array(file['tasks']['RS_xy_dz'])
-	dRS_uw2 = np.array(file['tasks']['RS_xz_dz'])
-	dRS_vw2 = np.array(file['tasks']['RS_yz_dz'])
-	u_bar2 = np.array(file['tasks']['u_bar'])
-	v_bar2 = np.array(file['tasks']['v_bar'])
-	w_bar2 = np.array(file['tasks']['w_bar'])
-	Ro2 = np.array(file['tasks']['Ro_layer'])
+#with h5py.File(direc2 + "analysis/analysis_" + run_name + ".h5", mode='r') as file:
+#	Re2 = np.array(file['tasks']['Re'])[:,0,:]                   ## NEW!!
+#	RS_uv2 = np.array(file['tasks']['RS_xy'])
+#	RS_uw2 = np.array(file['tasks']['RS_xz'])
+#	RS_vw2 = np.array(file['tasks']['RS_yz'])
+#	dRS_uv2 = np.array(file['tasks']['RS_xy_dz'])
+#	dRS_uw2 = np.array(file['tasks']['RS_xz_dz'])
+#	dRS_vw2 = np.array(file['tasks']['RS_yz_dz'])
+#	u_bar2 = np.array(file['tasks']['u_bar'])
+#	v_bar2 = np.array(file['tasks']['v_bar'])
+#	w_bar2 = np.array(file['tasks']['w_bar'])
+#	Ro2 = np.array(file['tasks']['Ro_layer'])
 	#print(L_buoy_all.shape)
 	#print(E_def_all.shape)
 	#print()
@@ -142,24 +142,24 @@ with h5py.File(direc2 + "analysis/analysis_" + run_name + ".h5", mode='r') as fi
 	#print('----E_def-----')
 	#print(E_def_all)
 
-	KE2 = np.array(file['tasks']['KE'])[:,0,0]
+#	KE2 = np.array(file['tasks']['KE'])[:,0,0]
 
-	s_mean2 = np.array(file['tasks']['<s>_y'])[-1,0,:] #!!!CHANGE REMAINING X to Y!!!!!
+#	s_mean2 = np.array(file['tasks']['<s>_y'])[-1,0,:] #!!!CHANGE REMAINING X to Y!!!!!
 
-	ana_t2 = np.array(file['scales']['sim_time'])
+#	ana_t2 = np.array(file['scales']['sim_time'])
 	#print('time shape:', ana_t.shape)
 	#print('x shape:', x.shape)
 
 
-with h5py.File(direc2 + "snapshots/snapshots_" + run_name + ".h5", mode='r') as file:
-	u_all2 = np.array(file['tasks']['u'])
+#with h5py.File(direc2 + "snapshots/snapshots_" + run_name + ".h5", mode='r') as file:
+#	u_all2 = np.array(file['tasks']['u'])
 	#print(u_all)
 	#print(u_all.shape)
-	w_all2 = np.array(file['tasks']['w'])
+#	w_all2 = np.array(file['tasks']['w'])
 	#T_all = np.array(file['tasks']['T'])
-	s_all2 = np.array(file['tasks']['s'])
-	snap_t2 = np.array(file['scales']['sim_time'])
-	snap_iter2 = np.array(file['scales']['iteration'])
+#	s_all2 = np.array(file['tasks']['s'])
+#	snap_t2 = np.array(file['scales']['sim_time'])
+#	snap_iter2 = np.array(file['scales']['iteration'])
 
 with h5py.File(direc3 + "analysis/analysis_" + run_name + ".h5", mode='r') as file:
 	Re3 = np.array(file['tasks']['Re'])[:,0,:]                   ## NEW!!
@@ -588,10 +588,9 @@ plt.close()
 plt.clf()
 
 u_bar_z3 = np.mean(np.array(u_bar3), axis=0)
-u_bar_z2 = np.mean(np.array(u_bar2), axis=0)
-u_bar_z = np.mean(np.array(u_bar), axis=0)
+#u_bar_z = np.mean(np.array(u_bar), axis=0)
 plt.plot(u_bar_z, z, 'r')
-plt.plot(u_bar_z2, z, 'g')
+#plt.plot(u_bar_z2, z, 'g')
 plt.plot(u_bar3, z, 'b')
 plt.title(get_title (save_direc))
 plt.xlabel(r"$ \overline{u} $")
@@ -603,11 +602,10 @@ plt.close()
 plt.clf()
 
 v_bar_z = np.mean(np.array(v_bar), axis=0)
-v_bar_z2 = np.mean(np.array(v_bar2), axis=0)
+#v_bar_z2 = np.mean(np.array(v_bar2), axis=0)
 v_bar_z3 = np.mean(np.array(v_bar3), axis=0)
 plt.plot(v_bar_z, z, 'r')
-plt.plot(v_bar_z2, z, 'g')
-plt.plot(v_bar_z3, z, 'b')
+#ßplt.plot(v_bar_z3, z, 'b')
 plt.title(get_title (save_direc))
 plt.xlabel(r"$ \overline{u} $")
 plt.ylabel(r"$z$")
