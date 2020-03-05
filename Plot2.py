@@ -22,6 +22,8 @@ from shutil import copy2
 #from run_param_file + sys.argv[1] import Np
 
 direc = "raw_data/"
+direc2 = "raw_data2/"
+direc3 = "raw_data3/"
 #save_direc = "figs_rot_only/Np=%.2f/Ra=%.2E/Ta=%.2E/Phi=%i/" % (Np, Decimal(Ra), Decimal(Ta), Decimal(Phi))
 run_name = "test1"
 
