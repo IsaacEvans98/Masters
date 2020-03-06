@@ -151,7 +151,7 @@ with h5py.File(direc2 + "analysis/analysis_" + run_name + ".h5", mode='r') as fi
 	#print('x shape:', x.shape)
 
 
-#with h5py.File(direc2 + "snapshots/snapshots_" + run_name + ".h5", mode='r') as file:
+with h5py.File(direc2 + "snapshots/snapshots_" + run_name + ".h5", mode='r') as file:
 	u_all2 = np.array(file['tasks']['u'])
 	#print(u_all)
 	#print(u_all.shape)
