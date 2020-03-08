@@ -279,6 +279,12 @@ RS_vw = RS_vw[:,0,:]
 dRS_uv = dRS_uv[:,0,:]
 dRS_uw = dRS_uw[:,0,:]
 dRS_vw = dRS_vw[:,0,:]
+dRS_uv2 = dRS_uv2[:,0,:]
+dRS_uw2 = dRS_uw2[:,0,:]
+dRS_vw2 = dRS_vw2[:,0,:]
+dRS_uv3 = dRS_uv3[:,0,:]
+dRS_uw3 = dRS_uw3[:,0,:]
+dRS_vw3 = dRS_vw3[:,0,:]
 u_bar = u_bar[:,0,:]
 v_bar = v_bar[:,0,:]
 w_bar = w_bar[:,0,:]
@@ -439,8 +445,12 @@ plt.savefig(save_direc + "dRS_vw_t.pdf")
 plt.close()
 plt.clf()
 
-dRS_uv_z = np.mean(np.array(dRS_uv), axis=0)
+dRS_uv_z = np.mean(np.array(dRS_uv), axis=0) / pow(Ta, 0.5)
+dRS_uv_z2 = np.mean(np.array(dRS_uv2), axis=0) / pow(Ta, 0.5)
+dRS_uv_z3 = np.mean(np.array(dRS_uv3), axis=0) / pow(Ta, 0.5)
 plt.plot(dRS_uv_z, z)
+plt.plot(dRS_uv_z2, z, 'g', linestyle='dashed')
+plt.plot(dRS_uv_z3, z, 'b', linestyle='dashed')
 plt.title(get_title (save_direc))
 plt.xlabel(r"$ \frac{\partial\left\langle\overline{uv}\right\rangle} {\partial z}$")
 plt.ylabel(r"$z$")
@@ -450,8 +460,12 @@ plt.savefig(save_direc + "dRS_uv_z.pdf")
 plt.close()
 plt.clf()
 
-dRS_uw_z = np.mean(np.array(dRS_uw), axis=0)
+dRS_uw_z = np.mean(np.array(dRS_uw), axis=0) / pow(Ta, 0.5)
+dRS_uw_z2 = np.mean(np.array(dRS_uw2), axis=0) /pow(Ta, 0.5)
+dRS_uw_z2 = np.mean(np.array(dRS_uw3), axis=0) / pow(Ta, 0.5)
 plt.plot(dRS_uw_z, z)
+plt.plot(dRS_uw_z2, z, 'g', linestyle='dashed')
+plt.plot(dRS_uw_z3, z, 'b', linestyle='dashed')
 plt.title(get_title (save_direc))
 plt.xlabel(r"$ \frac{\partial\left\langle\overline{uw}\right\rangle} {\partial z}$")
 plt.ylabel(r"$z$")
@@ -461,8 +475,12 @@ plt.savefig(save_direc + "dRS_uw_z.pdf")
 plt.close()
 plt.clf()
 
-dRS_vw_z = np.mean(np.array(dRS_vw), axis=0)
+dRS_vw_z = np.mean(np.array(dRS_vw), axis=0) / pow(Ta, 0.5)
+dRS_vw_z2 = np.mean(np.array(dRS_vw2), axis=0) /pow(Ta, 0.5)
+dRS_vw_z3 = np.mean(np.array(dRS_vw3), axis=0) / pow(Ta, 0.5)
 plt.plot(dRS_vw_z, z)
+plt.plot(dRS_vw_z2, z, 'g', linestyle='dashed')
+plt.plot(dRS_vw_z3, z, 'b', linestyle='dashed')
 plt.title(get_title (save_direc))
 plt.xlabel(r"$ \frac{\partial\left\langle\overline{vw}\right\rangle} {\partial z}$")
 plt.ylabel(r"$z$")
