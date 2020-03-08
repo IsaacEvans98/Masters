@@ -462,7 +462,7 @@ plt.clf()
 
 dRS_uw_z = np.mean(np.array(dRS_uw), axis=0) / pow(Ta, 0.5)
 dRS_uw_z2 = np.mean(np.array(dRS_uw2), axis=0) /pow(Ta, 0.5)
-dRS_uw_z2 = np.mean(np.array(dRS_uw3), axis=0) / pow(Ta, 0.5)
+dRS_uw_z3 = np.mean(np.array(dRS_uw3), axis=0) / pow(Ta, 0.5)
 plt.plot(dRS_uw_z, z)
 plt.plot(dRS_uw_z2, z, 'g', linestyle='dashed')
 plt.plot(dRS_uw_z3, z, 'b', linestyle='dashed')
