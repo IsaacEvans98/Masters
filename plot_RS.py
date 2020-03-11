@@ -315,6 +315,8 @@ def plot_contour (data, fname, ax_label):
 
 	cbar = plt.colorbar()
 	cbar.set_label(ax_label)
+	plt.tight_layout()
+
 	plt.savefig(save_direc + fname)
 	plt.close()
 	plt.clf()
