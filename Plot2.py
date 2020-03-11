@@ -14,14 +14,14 @@ import fractions
 
 from shutil import copy2
 
-plt.rc('axes', titlesize=20)
-plt.rc('font', size=18)          # controls default text sizes
+#plt.rc('axes', titlesize=20)
+#plt.rc('font', size=18)          # controls default text sizes#
 
-plt.rc('axes', labelsize=18)    # fontsize of the x and y labels
-plt.rc('xtick', labelsize=14)    # fontsize of the tick labels
-plt.rc('ytick', labelsize=14)    # fontsize of the tick labels
-plt.rc('legend', fontsize=16)    # legend fontsize
-plt.rc('figure', titlesize=18)
+#plt.rc('axes', labelsize=18)    # fontsize of the x and y labels
+#plt.rc('xtick', labelsize=14)    # fontsize of the tick labels
+#plt.rc('ytick', labelsize=14)    # fontsize of the tick labels
+#plt.rc('legend', fontsize=16)    # legend fontsize
+#plt.rc('figure', titlesize=18)
 #print(sys.argv)
 
 #rpf = importlib.import_module('run_param_file_' + sys.argv[1])
