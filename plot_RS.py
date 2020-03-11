@@ -22,7 +22,7 @@ plt.rc('axes', labelsize=18)    # fontsize of the x and y labels
 plt.rc('xtick', labelsize=16)    # fontsize of the tick labels
 plt.rc('ytick', labelsize=16)    # fontsize of the tick labels
 plt.rc('legend', fontsize=16)    # legend fontsize
-plt.rc('figure', titlesize=20)
+plt.rc('figure', titlesize=16)
 #print(sys.argv)
 
 #rpf = importlib.import_module('run_param_file_' + sys.argv[1])
