@@ -15,7 +15,7 @@ import fractions
 from shutil import copy2
 
 
-plt.rc('axes', titlesize=20)
+plt.rc('axes', titlesize=16)
 plt.rc('font', size=18)          # controls default text sizes
 
 plt.rc('axes', labelsize=18)    # fontsize of the x and y labels
@@ -301,7 +301,7 @@ plt.clf()
 
 def plot_contour (data, fname, ax_label):
 	plt.contourf(ana_t, z, np.transpose(data), levels=np.linspace(find_limit (data)[0], find_limit (data)[1], 51), cmap='RdBu_r')
-	plt.title(get_title (save_direc))
+	plt.title(get_title (save_direc), fontsize=16)
 	plt.xlabel(r"Time, $t_\nu$")
 	plt.ylabel(r"$z$")
 	plt.xlim(0,ana_t[-1])
