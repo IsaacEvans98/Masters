@@ -496,6 +496,8 @@ plt.xlabel(r"$ \frac{\partial\left\langle\overline{vw}\right\rangle} {\partial z
 plt.ylabel(r"$z$")
 plt.ylim(0,max(z))
 plt.xlim(find_limit (dRS_vw_z3))
+plt.tight_layout()
+
 plt.savefig(save_direc + "dRS_vw_z.pdf")
 plt.close()
 plt.clf()
