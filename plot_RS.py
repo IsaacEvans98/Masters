@@ -516,7 +516,7 @@ plt.savefig(save_direc + "grad_RS_vw.pdf")
 plt.close()
 plt.clf()
 
-dRS_vw_z = np.mean(np.array(dRS_vw), axis=0) / pow(Ta, 0.5)
+dRS_vw_z = np.mean(np.array(dRS_vw), axis=0)  * 2
 u_bar_z = np.mean(np.array(u_bar), axis=0)
 plt.plot(u_bar_z, z)
 plt.plot(dRS_vw_z, z, 'r', linestyle ='dashed')
@@ -531,7 +531,7 @@ plt.savefig(save_direc + "u_bar_z.pdf")
 plt.close()
 plt.clf()
 
-dRS_uw_z = np.mean(np.array(dRS_uw), axis=0) / pow(Ta, 0.5)
+dRS_uw_z = np.mean(np.array(dRS_uw), axis=0) * 2
 v_bar_z = np.mean(np.array(v_bar), axis=0)
 plt.plot(v_bar_z, z)
 plt.plot(dRS_uw_z, z, 'r', linestyle ='dashed')
