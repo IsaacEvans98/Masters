@@ -533,7 +533,7 @@ plt.savefig(save_direc + "u_bar_z.pdf")
 plt.close()
 plt.clf()
 
-dRS_uw_z = np.mean(np.array(dRS_uw), axis=0) / pow(Ta, 0.5)
+dRS_uw_z = np.mean(np.array(dRS_uw), axis=0) *2 / pow(Ta, 0.5)
 v_bar_z = np.mean(np.array(v_bar), axis=0)
 plt.plot(v_bar_z, z)
 plt.plot(dRS_uw_z, z, 'r', linestyle ='dashed')
