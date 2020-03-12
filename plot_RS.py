@@ -15,14 +15,14 @@ import fractions
 from shutil import copy2
 
 
-plt.rc('axes', titlesize=16)
+plt.rc('axes', titlesize=20)
 plt.rc('font', size=18)          # controls default text sizes
 
 plt.rc('axes', labelsize=18)    # fontsize of the x and y labels
 plt.rc('xtick', labelsize=16)    # fontsize of the tick labels
 plt.rc('ytick', labelsize=16)    # fontsize of the tick labels
 plt.rc('legend', fontsize=16)    # legend fontsize
-plt.rc('figure', titlesize=16)
+plt.rc('figure', titlesize=20)
 #print(sys.argv)
 
 #rpf = importlib.import_module('run_param_file_' + sys.argv[1])
@@ -301,7 +301,7 @@ plt.clf()
 
 def plot_contour (data, fname, ax_label):
 	plt.contourf(ana_t, z, np.transpose(data), levels=np.linspace(find_limit (data)[0], find_limit (data)[1], 51), cmap='RdBu_r')
-	plt.title(get_title (save_direc), fontsize=16)
+	plt.title(get_title (save_direc))
 	plt.xlabel(r"Time, $t_\nu$")
 	plt.ylabel(r"$z$")
 	plt.xlim(0,ana_t[-1])
@@ -364,7 +364,7 @@ plt.savefig(save_direc + "dRS_vw_t.pdf")
 plt.close()
 plt.clf()
 
-#dRS_uv_z = np.mean(np.array(dRS_uv), axis=0)
+dRS_uv_z = np.mean(np.array(dRS_uv), axis=0)
 plt.plot(dRS_uv_z, z)
 plt.title(get_title (save_direc))
 plt.xlabel(r"$ \frac{\partial\left\langle\overline{uv}\right\rangle} {\partial z}$")
@@ -375,7 +375,7 @@ plt.savefig(save_direc + "dRS_uv_z.pdf")
 plt.close()
 plt.clf()
 
-#dRS_uw_z = np.mean(np.array(dRS_uw), axis=0)
+dRS_uw_z = np.mean(np.array(dRS_uw), axis=0)
 plt.plot(dRS_uw_z, z)
 plt.title(get_title (save_direc))
 plt.xlabel(r"$ \frac{\partial\left\langle\overline{uw}\right\rangle} {\partial z}$")
@@ -386,7 +386,7 @@ plt.savefig(save_direc + "dRS_uw_z.pdf")
 plt.close()
 plt.clf()
 
-#dRS_vw_z = np.mean(np.array(dRS_vw), axis=0)
+dRS_vw_z = np.mean(np.array(dRS_vw), axis=0)
 plt.plot(dRS_vw_z, z)
 plt.title(get_title (save_direc))
 plt.xlabel(r"$ \frac{\partial\left\langle\overline{vw}\right\rangle} {\partial z}$")
@@ -518,7 +518,7 @@ plt.savefig(save_direc + "grad_RS_vw.pdf")
 plt.close()
 plt.clf()
 
-dRS_vw_z = (np.mean(np.array(dRS_vw), axis=0) / pow(Ta, 0.5)) * 2
+dRS_vw_z = np.mean(np.array(dRS_vw), axis=0) / pow(Ta, 0.5)
 u_bar_z = np.mean(np.array(u_bar), axis=0)
 plt.plot(u_bar_z, z)
 plt.plot(dRS_vw_z, z, 'r', linestyle ='dashed')
@@ -533,7 +533,7 @@ plt.savefig(save_direc + "u_bar_z.pdf")
 plt.close()
 plt.clf()
 
-dRS_uw_z = (np.mean(np.array(dRS_uw), axis=0) / pow(Ta, 0.5)) * 2
+dRS_uw_z = np.mean(np.array(dRS_uw), axis=0) / pow(Ta, 0.5)
 v_bar_z = np.mean(np.array(v_bar), axis=0)
 plt.plot(v_bar_z, z)
 plt.plot(dRS_uw_z, z, 'r', linestyle ='dashed')
