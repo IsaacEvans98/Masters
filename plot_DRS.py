@@ -451,9 +451,20 @@ def meansq (arr):
 	sqmean = sqsum / num
 	return np.sqrt(sqmean)
 
+def nsq (arr):
+	sqsum2 = 0
+	num2 = 0
+	for point in arr:
+		sqsum2 += point * point
+		num2 += 1
+
+
+	return np.sqrt(sqsum2)
+
 len_RS_z = len(RS_uv_z)
 
 print("RS_uv_z rms: " + str(meansq(RS_uv_z)))
+print("RS_uv_z rs: " + str(nsq(RS_uv_z)))
 plt.plot(RS_uv_z, z)
 plt.title(get_title (save_direc))
 plt.xlabel(r"$\left\langle\overline{uv}\right\rangle$")
@@ -465,6 +476,7 @@ plt.close()
 plt.clf()
 
 print("RS_uw_z rms: " + str(meansq(RS_uw_z)))
+print("RS_uw_z rs: " + str(nsq(RS_uw_z)))
 plt.plot(RS_uw_z, z)
 plt.title(get_title (save_direc))
 plt.xlabel(r"$\left\langle\overline{uw}\right\rangle$")
@@ -476,6 +488,7 @@ plt.close()
 plt.clf()
 
 print("RS_vw_z rms: " + str(meansq(RS_vw_z)))
+print("RS_vw_z rs: " + str(nsq(RS_vw_z)))
 plt.plot(RS_vw_z, z)
 plt.title(get_title (save_direc))
 plt.xlabel(r"$\left\langle\overline{vw}\right\rangle$")
