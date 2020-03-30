@@ -280,13 +280,13 @@ RS_uw_z
 RS_uw_zsq = 0
 count2 = 0
 for num2 in range(len(RS_uw_z)):
-	if ((num2 / len(RS_uw_z)) > 0.25 and (i/len(RS_uw_z)) < 0.75):
+	if ( (num2 / len(RS_uw_z)) > 0.25 and (i / len(RS_uw_z)) < 0.75):
 		RS_uw_zsq += (RS_uw_z[num2] * RS_uw_z[num2])
 		count2 += 1
 	else:
 		continue
 
-RS_uw_zRMS = np.sqrt(RS_uw_zsq / count2)
+RS_uw_zRMS = np.sqrt( RS_uw_zsq / count2 )
 
 
 with open(save_direc + "Ro.dat", "w") as f:
@@ -305,7 +305,7 @@ for num3 in range(len(RS_vw_z)):
 	else:
 		continue
 
-RS_vw_zRMS = np.sqrt(RS_vw_zsq / count3)
+RS_vw_zRMS = np.sqrt( RS_vw_zsq / count3 )
 
 
 with open(save_direc + "Ro.dat", "w") as f:
@@ -324,13 +324,13 @@ for num4 in range(len(RS_uv_z)):
 	else:
 		continue
 
-RS_uv_zRMS = np.sqrt(RS_uv_zsq / count4)
+RS_uv_zRMS = np.sqrt( RS_uv_zsq / count4 )
 
 
 with open(save_direc + "Ro.dat", "w") as f:
 	f.write("R: " + str(RS_uv_zRMS) + "\n\n")
 	f.close()
-	
+
 num_sections = 8
 heights = []
 Ro_sections = []
