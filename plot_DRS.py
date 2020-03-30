@@ -290,8 +290,8 @@ for num2 in range(len(RS_uw_z)):
 RS_uw_zRMS = np.sqrt( RS_uw_zsq / count2 )
 
 
-with open(save_direc + "Ro.dat", "w") as f:
-	f.write("R: " + str(RS_uw_zRMS) + "\n\n")
+with open(save_direc + "uwRMS.dat", "w") as f:
+	f.write("RS_uw_zRMS: " + str(RS_uw_zRMS) + "\n\n")
 	f.close()
 
 
@@ -309,8 +309,8 @@ for num3 in range(len(RS_vw_z)):
 RS_vw_zRMS = np.sqrt( RS_vw_zsq / count3 )
 
 
-with open(save_direc + "Ro.dat", "w") as f:
-	f.write("R: " + str(RS_vw_zRMS) + "\n\n")
+with open(save_direc + "vwRMS.dat", "w") as f:
+	f.write("RS_vw_zRMS: " + str(RS_vw_zRMS) + "\n\n")
 	f.close()
 
 
@@ -327,8 +327,8 @@ for num4 in range(len(RS_uv_z)):
 RS_uv_zRMS = np.sqrt( RS_uv_zsq / count4 )
 
 
-with open(save_direc + "Ro.dat", "w") as f:
-	f.write("R: " + str(RS_uv_zRMS) + "\n\n")
+with open(save_direc + "uvRMS.dat", "w") as f:
+	f.write("RS_uv_zRMS: " + str(RS_uv_zRMS) + "\n\n")
 	f.close()
 
 num_sections = 8
