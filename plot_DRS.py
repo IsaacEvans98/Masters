@@ -332,6 +332,78 @@ with open(save_direc + "uvRMS.dat", "w") as f:
 	f.write("RS_uv_zRMS: " + str(RS_uv_zRMS) + "\n\n")
 	f.close()
 
+
+
+
+
+
+
+
+
+
+	dRS_uw_zsq = 0
+	count5 = 0
+	for num5 in range(len(dRS_uw_z)):
+
+		if ( (num5 / len(dRS_uw_z)) > 0.25 and (num5 / len(dRS_uw_z)) < 0.75):
+			dRS_uw_zsq +=  dRS_uw_z[num5] * dRS_uw_z[num5]
+			count5 += 1
+		else:
+			continue
+
+	dRS_uw_zRMS = np.sqrt( dRS_uw_zsq / count5 )
+
+
+	with open(save_direc + "duwRMS.dat", "w") as f:
+		f.write("dRS_uw_zRMS: " + str(dRS_uw_zRMS) + "\n\n")
+		f.close()
+
+
+
+
+	dRS_vw_zsq = 0
+	count5 = 0
+	for num5 in range(len(dRS_vw_z)):
+
+		if ( (num5 / len(dRS_vw_z)) > 0.25 and (num5 /len(dRS_vw_z)) < 0.75):
+			dRS_vw_zsq += dRS_vw_z[num5] * dRS_vw_z[num5]
+			count5 += 1
+		else:
+			continue
+
+	dRS_vw_zRMS = np.sqrt( dRS_vw_zsq / count5 )
+
+
+	with open(save_direc + "dvwRMS.dat", "w") as f:
+		f.write("dRS_vw_zRMS: " + str(dRS_vw_zRMS) + "\n\n")
+		f.close()
+
+
+
+	dRS_uv_zsq = 0
+	count6 = 0
+	for num6 in range(len(dRS_uv_z)):
+		if ((num6 / len(dRS_uv_z)) > 0.25 and (num6 /len(dRS_uv_z)) < 0.75):
+			dRS_uv_zsq += dRS_uv_z[num6] * dRS_uw_z[num6]
+			count6 += 1
+		else:
+			continue
+
+	dRS_uv_zRMS = np.sqrt( RS_uv_zsq / count4 )
+
+
+	with open(save_direc + "duvRMS.dat", "w") as f:
+		f.write("dRS_uv_zRMS: " + str(dRS_uv_zRMS) + "\n\n")
+		f.close()
+
+
+
+
+
+
+
+
+
 num_sections = 8
 heights = []
 Ro_sections = []
