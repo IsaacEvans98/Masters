@@ -300,9 +300,9 @@ with open(save_direc + "uwRMS.dat", "w") as f:
 RS_vw_zsq = 0
 count3 = 0
 for num3 in range(len(RS_vw_z)):
-	
-	if ((num3 / len(RS_vw_z)) > 0.25 and (num3 /len(RS_vw_z)) < 0.75):
-		RS_vw_zsq += RS_vw_z[num3] * RS_uw_z[num3]
+
+	if ( (num3 / len(RS_vw_z)) > 0.25 and (num3 /len(RS_vw_z)) < 0.75):
+		RS_vw_zsq += RS_vw_z[num3] * RS_vw_z[num3]
 		count3 += 1
 	else:
 		continue
