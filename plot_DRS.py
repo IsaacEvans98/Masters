@@ -369,7 +369,7 @@ for num7 in range(len(dRS_vw_z)):
 
 		if ( (num7 / len(dRS_vw_z)) > 0.25 and (num7 /len(dRS_vw_z)) < 0.75):
 			dRS_vw_zsq += dRS_vw_z[num7] * dRS_vw_z[num7]
-			count5 += 1
+			count7 += 1
 		else:
 			continue
 
