@@ -365,7 +365,7 @@ dRS_vw_z = np.mean(np.array(dRS_vw), axis=0)
 
 dRS_vw_zsq = 0
 count7 = 0
-for num5 in range(len(dRS_vw_z)):
+for num7 in range(len(dRS_vw_z)):
 
 		if ( (num7 / len(dRS_vw_z)) > 0.25 and (num7 /len(dRS_vw_z)) < 0.75):
 			dRS_vw_zsq += dRS_vw_z[num7] * dRS_vw_z[num7]
