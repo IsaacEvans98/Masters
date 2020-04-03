@@ -333,8 +333,8 @@ dRS_uv_zRMS = np.sqrt( dRS_uv_zsq / count4 )
 with open(save_direc + "duvRMS.dat", "w") as f:
 	f.write("dRS_uv_zRMS: " + str(dRS_uv_zRMS) + "\n\n")
     f.write("Height, duvRMS\n")
-	for i in range(len(dRS_uw_z)):
-		f.write(str( i / (len(dRS_uw_z) - 1) ) + "," + str(dRS_uw_z[i]) + "\n")
+	for i in range(len(dRS_uv_z)):
+		f.write(str( i / (len(dRS_uv_z) - 1) ) + "," + str(dRS_uv_z[i]) + "\n")
 	f.close()
 
 
