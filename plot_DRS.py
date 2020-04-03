@@ -370,7 +370,7 @@ for num3 in range(len(dRS_vw_z)):
 
 	if ( (num3 / len(dRS_vw_z)) > 0.25 and (num3 /len(dRS_vw_z)) < 0.75):
 		dRS_vw_zsq += dRS_vw_z[num3] * dRS_vw_z[num3]
-		count3 += 1
+		count6 += 1
 	else:
 		continue
 
@@ -392,7 +392,7 @@ for num4 in range(len(RS_uv_z)):
 	else:
 		continue
 
-dRS_uv_zRMS = np.sqrt( RS_uv_zsq / count7 )
+dRS_uv_zRMS = np.sqrt( dRS_uv_zsq / count7 )
 
 
 with open(save_direc + "duvRMS.dat", "w") as f:
