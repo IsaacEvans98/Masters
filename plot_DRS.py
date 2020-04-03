@@ -248,7 +248,7 @@ for i in range (0, len(z) - 1):
 
 grad_RS_vw=np.array(grad_RS_vw)
 
-arrays = [RS_uv_t, RS_uw_t, RS_vw_t, RS_uv_z, RS_uw_z, RS_vw_z, ana_t, z, grad_RS_uv, dRS_uv]
+arrays = [RS_uv_t, RS_uw_t, RS_vw_t, RS_uv_z, RS_uw_z, RS_vw_z, ana_t, z, grad_RS_uv]
 
 print("diagnostic: shape of arrays")
 for arr in arrays:
@@ -346,10 +346,9 @@ with open(save_direc + "uvRMS.dat", "w") as f:
 
 dRS_uw_zsq = 0
 count5 = 0
-for num2 in range(len(dRS_uw_z)):
-
-	if ( (num2 / len(dRS_uw_z)) > 0.25 and (num2 / len(dRS_uw_z)) < 0.75):
-		dRS_uw_zsq +=  dRS_uw_z[num2] * dRS_uw_z[num2]
+for num5 in range(len(dRS_uw_z)):
+	if ( (num2 / len(dRS_uw_z)) > 0.25 and (num5 / len(dRS_uw_z)) < 0.75):
+		dRS_uw_zsq +=  dRS_uw_z[num5] * dRS_uw_z[num5]
 		count5 += 1
 	else:
 		continue
@@ -366,10 +365,9 @@ with open(save_direc + "duwRMS.dat", "w") as f:
 
 dRS_vw_zsq = 0
 count6 = 0
-for num3 in range(len(dRS_vw_z)):
-
-	if ( (num3 / len(dRS_vw_z)) > 0.25 and (num3 /len(dRS_vw_z)) < 0.75):
-		dRS_vw_zsq += dRS_vw_z[num3] * dRS_vw_z[num3]
+for num6 in range(len(dRS_vw_z)):
+	if ( (num6 / len(dRS_vw_z)) > 0.25 and (num6 /len(dRS_vw_z)) < 0.75):
+		dRS_vw_zsq += dRS_vw_z[num6] * dRS_vw_z[num6]
 		count6 += 1
 	else:
 		continue
@@ -493,7 +491,6 @@ plt.savefig(save_direc + "dRS_vw_t.pdf")
 plt.close()
 plt.clf()
 
-dRS_uv_z = np.mean(np.array(dRS_uv), axis=0)
 plt.plot(dRS_uv_z, z)
 plt.title(get_title (save_direc))
 plt.xlabel(r"$ \frac{\partial\left\langle\overline{uv}\right\rangle} {\partial z}$")
@@ -504,7 +501,6 @@ plt.savefig(save_direc + "dRS_uv_z.pdf")
 plt.close()
 plt.clf()
 
-dRS_uw_z = np.mean(np.array(dRS_uw), axis=0)
 plt.plot(dRS_uw_z, z)
 plt.title(get_title (save_direc))
 plt.xlabel(r"$ \frac{\partial\left\langle\overline{uw}\right\rangle} {\partial z}$")
@@ -515,7 +511,6 @@ plt.savefig(save_direc + "dRS_uw_z.pdf")
 plt.close()
 plt.clf()
 
-dRS_vw_z = np.mean(np.array(dRS_vw), axis=0)
 plt.plot(dRS_vw_z, z)
 plt.title(get_title (save_direc))
 plt.xlabel(r"$ \frac{\partial\left\langle\overline{vw}\right\rangle} {\partial z}$")
