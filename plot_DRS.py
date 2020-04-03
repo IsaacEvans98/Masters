@@ -392,7 +392,7 @@ for num4 in range(len(RS_uv_z)):
 	else:
 		continue
 
-RS_uv_zRMS = np.sqrt( RS_uv_zsq / count7 )
+dRS_uv_zRMS = np.sqrt( RS_uv_zsq / count7 )
 
 
 with open(save_direc + "duvRMS.dat", "w") as f:
