@@ -362,7 +362,6 @@ with open(save_direc + "duwRMS.dat", "w") as f:
 
 
 dRS_vw_z = np.mean(np.array(dRS_vw), axis=0)
-
 dRS_vw_zsq = 0
 count7 = 0
 for num7 in range(len(dRS_vw_z)):
@@ -593,6 +592,12 @@ def nsq (arr):
 	return np.sqrt(sqsum2)
 
 len_RS_z = len(RS_uv_z)
+
+
+print("dRS_uv_z rms: " + str(dRS_uv_zRMS))
+print("dRS_uw_z rms: " + str(meansq(dRS_uw_z)))
+print("dRS_vw_z rms: " + str(meansq(dRS_vw_z)))
+
 
 print("RS_uv_z rms: " + str(meansq(RS_uv_z)))
 print("RS_uv_z rs: " + str(nsq(RS_uv_z)))
