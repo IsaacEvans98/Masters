@@ -224,6 +224,9 @@ RS_vw_t = np.mean(np.array(RS_vw), axis=1)
 RS_uv_z = np.mean(np.array(RS_uv), axis=0)
 RS_uw_z = np.mean(np.array(RS_uw), axis=0)
 RS_vw_z = np.mean(np.array(RS_vw), axis=0)
+dRS_uv_z = np.mean(np.array(dRS_uv), axis=0)
+dRS_uw_z = np.mean(np.array(dRS_uw), axis=0)
+dRS_vw_z = np.mean(np.array(dRS_vw), axis=0)
 
 grad_RS_uv=[]
 for i in range (0, len(z) - 1):
