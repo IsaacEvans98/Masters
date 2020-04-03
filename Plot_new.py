@@ -288,11 +288,11 @@ dRS_uw_zRMS = np.sqrt( dRS_uw_zsq / count2 )
 
 
 with open(save_direc + "duwRMS.dat", "w") as f:
-	f.write("dRS_uw_zRMS: " + str(dRS_uw_zRMS) + "\n\n")
+    f.write("dRS_uw_zRMS: " + str(dRS_uw_zRMS) + "\n\n")
     f.write("Height, duwRMS\n")
-	for i in range(len(dRS_uw_z)):
-		f.write(str( i / (len(dRS_uw_z) - 1) ) + "," + str(dRS_uw_z[i]) + "\n")
-	f.close()
+    for i in range(len(dRS_uw_z)):
+        f.write(str( i / (len(dRS_uw_z) - 1) ) + "," + str(dRS_uw_z[i]) + "\n")
+    f.close()
 
 
 
@@ -310,11 +310,11 @@ dRS_vw_zRMS = np.sqrt( dRS_vw_zsq / count3 )
 
 
 with open(save_direc + "dvwRMS.dat", "w") as f:
-	f.write("dRS_vw_zRMS: " + str(dRS_vw_zRMS) + "\n\n")
+    f.write("dRS_vw_zRMS: " + str(dRS_vw_zRMS) + "\n\n")
     f.write("Height, dvwRMS\n")
-	for i in range(len(dRS_vw_z)):
-		f.write(str( i / (len(dRS_vw_z) - 1) ) + "," + str(dRS_vw_z[i]) + "\n")
-	f.close()
+    for i in range(len(dRS_vw_z)):
+        f.write(str( i / (len(dRS_vw_z) - 1) ) + "," + str(dRS_vw_z[i]) + "\n")
+    f.close()
 
 
 dRS_uv_z = np.mean(np.array(dRS_uv), axis=0)
@@ -331,11 +331,11 @@ dRS_uv_zRMS = np.sqrt( dRS_uv_zsq / count4 )
 
 
 with open(save_direc + "duvRMS.dat", "w") as f:
-	f.write("dRS_uv_zRMS: " + str(dRS_uv_zRMS) + "\n\n")
+    f.write("dRS_uv_zRMS: " + str(dRS_uv_zRMS) + "\n\n")
     f.write("Height, duvRMS\n")
-	for i in range(len(dRS_uv_z)):
-		f.write(str( i / (len(dRS_uv_z) - 1) ) + "," + str(dRS_uv_z[i]) + "\n")
-	f.close()
+    for i in range(len(dRS_uv_z)):
+        f.write(str( i / (len(dRS_uv_z) - 1) ) + "," + str(dRS_uv_z[i]) + "\n")
+    f.close()
 
 
 
