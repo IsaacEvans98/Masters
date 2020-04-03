@@ -343,16 +343,16 @@ with open(save_direc + "uvRMS.dat", "w") as f:
 dRS_uw_z = np.mean(np.array(dRS_uw), axis=0)
 
 dRS_uw_zsq = 0
-count5 = 0
-for num5 in range(len(dRS_uw_z)):
+count6 = 0
+for num6 in range(len(dRS_uw_z)):
 
-		if ( (num5 / len(dRS_uw_z)) > 0.25 and (num5 / len(dRS_uw_z)) < 0.75):
-			dRS_uw_zsq +=  dRS_uw_z[num5] * dRS_uw_z[num5]
-			count5 += 1
+		if ( (num6 / len(dRS_uw_z)) > 0.25 and (num6 / len(dRS_uw_z)) < 0.75):
+			dRS_uw_zsq +=  dRS_uw_z[num6] * dRS_uw_z[num6]
+			count6 += 1
 		else:
 			continue
 
-dRS_uw_zRMS = np.sqrt( dRS_uw_zsq / count5 )
+dRS_uw_zRMS = np.sqrt( dRS_uw_zsq / count6 )
 
 
 with open(save_direc + "duwRMS.dat", "w") as f:
@@ -364,16 +364,16 @@ with open(save_direc + "duwRMS.dat", "w") as f:
 dRS_vw_z = np.mean(np.array(dRS_vw), axis=0)
 
 dRS_vw_zsq = 0
-count5 = 0
+count7 = 0
 for num5 in range(len(dRS_vw_z)):
 
-		if ( (num5 / len(dRS_vw_z)) > 0.25 and (num5 /len(dRS_vw_z)) < 0.75):
-			dRS_vw_zsq += dRS_vw_z[num5] * dRS_vw_z[num5]
+		if ( (num7 / len(dRS_vw_z)) > 0.25 and (num7 /len(dRS_vw_z)) < 0.75):
+			dRS_vw_zsq += dRS_vw_z[num7] * dRS_vw_z[num7]
 			count5 += 1
 		else:
 			continue
 
-dRS_vw_zRMS = np.sqrt( dRS_vw_zsq / count5 )
+dRS_vw_zRMS = np.sqrt( dRS_vw_zsq / count7 )
 
 
 with open(save_direc + "dvwRMS.dat", "w") as f:
@@ -383,15 +383,15 @@ with open(save_direc + "dvwRMS.dat", "w") as f:
 
 dRS_uv_z = np.mean(np.array(dRS_uv), axis=0)
 dRS_uv_zsq = 0
-count6 = 0
-for num6 in range(len(dRS_uv_z)):
-		if ((num6 / len(dRS_uv_z)) > 0.25 and (num6 /len(dRS_uv_z)) < 0.75):
-			dRS_uv_zsq += dRS_uv_z[num6] * dRS_uw_z[num6]
-			count6 += 1
+count5 = 0
+for num5 in range(len(dRS_uv_z)):
+		if ((num5 / len(dRS_uv_z)) > 0.25 and (num5 /len(dRS_uv_z)) < 0.75):
+			dRS_uv_zsq += dRS_uv_z[num5] * dRS_uw_z[num5]
+			count5 += 1
 		else:
 			continue
 
-dRS_uv_zRMS = np.sqrt( RS_uv_zsq / count4 )
+dRS_uv_zRMS = np.sqrt( RS_uv_zsq / count5 )
 
 
 with open(save_direc + "duvRMS.dat", "w") as f:
