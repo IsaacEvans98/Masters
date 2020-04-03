@@ -340,63 +340,61 @@ with open(save_direc + "uvRMS.dat", "w") as f:
 
 
 
-dRS_uw_z = np.mean(np.array(dRS_uw), axis=0)
 
 dRS_uw_zsq = 0
-count6 = 0
-for num6 in range(len(dRS_uw_z)):
+count5 = 0
+for num2 in range(len(dRS_uw_z)):
 
-		if ( (num6 / len(dRS_uw_z)) > 0.25 and (num6 / len(dRS_uw_z)) < 0.75):
-			dRS_uw_zsq +=  dRS_uw_z[num6] * dRS_uw_z[num6]
-			count6 += 1
-		else:
-			continue
+	if ( (num2 / len(dRS_uw_z)) > 0.25 and (num2 / len(dRS_uw_z)) < 0.75):
+		dRS_uw_zsq +=  dRS_uw_z[num2] * dRS_uw_z[num2]
+		count5 += 1
+	else:
+		continue
 
-dRS_uw_zRMS = np.sqrt( dRS_uw_zsq / count6 )
+dRS_uw_zRMS = np.sqrt( dRS_uw_zsq / count5 )
 
 
 with open(save_direc + "duwRMS.dat", "w") as f:
-		f.write("dRS_uw_zRMS: " + str(dRS_uw_zRMS) + "\n\n")
-		f.close()
+	f.write("dRS_uw_zRMS: " + str(dRS_uw_zRMS) + "\n\n")
+	f.close()
 
 
 
-dRS_vw_z = np.mean(np.array(dRS_vw), axis=0)
+
 dRS_vw_zsq = 0
-count7 = 0
-for num7 in range(len(dRS_vw_z)):
+count6 = 0
+for num3 in range(len(dRS_vw_z)):
 
-		if ( (num7 / len(dRS_vw_z)) > 0.25 and (num7 /len(dRS_vw_z)) < 0.75):
-			dRS_vw_zsq += dRS_vw_z[num7] * dRS_vw_z[num7]
-			count7 += 1
-		else:
-			continue
+	if ( (num3 / len(dRS_vw_z)) > 0.25 and (num3 /len(dRS_vw_z)) < 0.75):
+		dRS_vw_zsq += dRS_vw_z[num3] * dRS_vw_z[num3]
+		count3 += 1
+	else:
+		continue
 
-dRS_vw_zRMS = np.sqrt( dRS_vw_zsq / count7 )
+dRS_vw_zRMS = np.sqrt( dRS_vw_zsq / count6 )
 
 
 with open(save_direc + "dvwRMS.dat", "w") as f:
-		f.write("dRS_vw_zRMS: " + str(dRS_vw_zRMS) + "\n\n")
-		f.close()
+	f.write("dRS_vw_zRMS: " + str(dRS_vw_zRMS) + "\n\n")
+	f.close()
 
 
-dRS_uv_z = np.mean(np.array(dRS_uv), axis=0)
+
 dRS_uv_zsq = 0
-count5 = 0
-for num5 in range(len(dRS_uv_z)):
-		if ((num5 / len(dRS_uv_z)) > 0.25 and (num5 /len(dRS_uv_z)) < 0.75):
-			dRS_uv_zsq += dRS_uv_z[num5] * dRS_uw_z[num5]
-			count5 += 1
-		else:
-			continue
+count7 = 0
+for num4 in range(len(RS_uv_z)):
+	if ((num4 / len(dRS_uv_z)) > 0.25 and (num4 /len(dRS_uv_z)) < 0.75):
+		dRS_uv_zsq += dRS_uv_z[num4] * dRS_uw_z[num4]
+		count7 += 1
+	else:
+		continue
 
-dRS_uv_zRMS = np.sqrt( RS_uv_zsq / count5 )
+RS_uv_zRMS = np.sqrt( RS_uv_zsq / count7 )
 
 
 with open(save_direc + "duvRMS.dat", "w") as f:
-		f.write("dRS_uv_zRMS: " + str(dRS_uv_zRMS) + "\n\n")
-		f.close()
-
+	f.write("dRS_uv_zRMS: " + str(dRS_uv_zRMS) + "\n\n")
+	f.close()
 
 
 
