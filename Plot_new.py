@@ -591,9 +591,11 @@ def meansq (arr):
     sqsum = 0
     num = 0
     for point in arr:
-        sqsum += point * point
-        num += 1
-
+        if ( (num / len(arr)) > 0.33 and (num / len(arr)) < 0.66 ):
+            sqsum += point * point
+            num += 1
+        else:
+            continue
     sqmean = sqsum / num
     return np.sqrt(sqmean)
 
