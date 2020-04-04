@@ -250,8 +250,12 @@ Ro_z = np.mean(np.array(Ro), axis=0)
 Ro_tot = 0
 count = 0
 for i in range(len(Ro_z)):
-	Ro_tot += Ro_z[i]
-	count += 1
+	# Chooses the middle half to average over
+	if ( (i / len(Ro_z)) > 0.25 and (i / len(Ro_z)) < 0.75):
+		Ro_tot += Ro_z[i]
+		count += 1
+	else:
+		continue
 
 Ro_glob_av = Ro_tot / count
 
@@ -261,7 +265,6 @@ with open(save_direc + "Ro.dat", "w") as f:
 	for i in range(len(Ro_z)):
 		f.write(str( i / (len(Ro_z) - 1) ) + "," + str(Ro_z[i]) + "\n")
 	f.close()
-
 
 
 
@@ -399,7 +402,7 @@ RS_uv_zRMS = np.sqrt( RS_uv_zsq / count7 )
 
 with open(save_direc + "uvRMS.dat", "w") as f:
     f.write("RS_uv_zRMS: " + str(RS_uv_zRMS) + "\n\n")
-    f.write("Height, uvRMS\n")
+    f.write("Height, uv\n")
     for i in range(len(RS_uv_z)):
         f.write(str( i / (len(RS_uv_z) - 1) ) + "," + str(RS_uv_z[i]) + "\n")
     f.close()
