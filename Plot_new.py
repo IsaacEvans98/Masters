@@ -341,6 +341,80 @@ with open(save_direc + "duvRMS.dat", "w") as f:
 
 
 
+RS_uw_z = np.mean(np.array(RS_uw), axis=0)
+RS_uw_zsq = 0
+count5 = 0
+for num5 in range(len(RS_uw_z)):
+	if ( (num2 / len(RS_uw_z)) > 0.25 and (num5 / len(RS_uw_z)) < 0.75):
+		RS_uw_zsq +=  RS_uw_z[num5] * RS_uw_z[num5]
+		count5 += 1
+	else:
+		continue
+
+RS_uw_zRMS = np.sqrt( RS_uw_zsq / count5 )
+
+
+with open(save_direc + "uwRMS.dat", "w") as f:
+    f.write("RS_uw_zRMS: " + str(RS_uw_zRMS) + "\n\n")
+    f.write("Height, duwRMS\n")
+    for i in range(len(RS_uw_z)):
+        f.write(str( i / (len(RS_uw_z) - 1) ) + "," + str(RS_uw_z[i]) + "\n")
+    f.close()
+
+
+
+RS_vw_z = np.mean(np.array(RS_vw), axis=0)
+RS_vw_zsq = 0
+count6 = 0
+for num6 in range(len(RS_vw_z)):
+	if ( (num6 / len(RS_vw_z)) > 0.25 and (num6 /len(RS_vw_z)) < 0.75):
+		RS_vw_zsq += RS_vw_z[num6] * RS_vw_z[num6]
+		count6 += 1
+	else:
+		continue
+
+RS_vw_zRMS = np.sqrt( RS_vw_zsq / count6 )
+
+
+with open(save_direc + "vwRMS.dat", "w") as f:
+    f.write("RS_vw_zRMS: " + str(RS_vw_zRMS) + "\n\n")
+    f.write("Height, vwRMS\n")
+    for i in range(len(RS_vw_z)):
+        f.write(str( i / (len(RS_vw_z) - 1) ) + "," + str(RS_vw_z[i]) + "\n")
+    f.close()
+
+
+RS_uv_z = np.mean(np.array(RS_uv), axis=0)
+RS_uv_zsq = 0
+count7 = 0
+for num7 in range(len(RS_uv_z)):
+	if ((num7 / len(RS_uv_z)) > 0.25 and (num7 /len(RS_uv_z)) < 0.75):
+		RS_uv_zsq += RS_uv_z[num7] * RS_uw_z[num7]
+		count7 += 1
+	else:
+		continue
+
+RS_uv_zRMS = np.sqrt( RS_uv_zsq / count7 )
+
+
+with open(save_direc + "uvRMS.dat", "w") as f:
+    f.write("RS_uv_zRMS: " + str(RS_uv_zRMS) + "\n\n")
+    f.write("Height, uvRMS\n")
+    for i in range(len(RS_uv_z)):
+        f.write(str( i / (len(RS_uv_z) - 1) ) + "," + str(RS_uv_z[i]) + "\n")
+    f.close()
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
