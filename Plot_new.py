@@ -616,6 +616,25 @@ with open(save_direc + "vwRMS2.dat", "w") as f:
 
     f.close()
 
+
+
+with open(save_direc + "dvwRMS2.dat", "w") as f:
+    f.write("dRS_vw_zRMS: " + str(meansq(dRS_vw_z)) + "\n\n")
+
+    f.close()
+
+
+with open(save_direc + "duwRMS2.dat", "w") as f:
+    f.write("dRS_uw_zRMS: " + str(meansq(dRS_uw_z)) + "\n\n")
+
+    f.close()
+
+
+with open(save_direc + "duvRMS2.dat", "w") as f:
+    f.write("dRS_uv_zRMS: " + str(meansq(dRS_uv_z)) + "\n\n")
+
+    f.close()
+
 print("RS_uv_z rms: " + str(meansq(RS_uv_z)))
 plt.plot(RS_uv_z, z)
 plt.title(get_title (save_direc))
