@@ -589,16 +589,16 @@ plt.clf()
 
 def meansq (arr):
     sqsum = 0
-    num10 = 0
+    num = 0
     for point in arr:
-        if ((num / len(arr)) > 0.33 and (num /len(arr)) < 0.66):
-            sqsum += point * point
-            num10 += 1
+        if ((num / len(arr)) > 0.33 and (num / len(arr)) <0.66):
+            sqsum = point * point
+            num += 1
         else:
             continue
 
-    sqmean = sqsum / num
-    return np.sqrt(sqmean)
+ sqmean = sqsum / num
+ return np.sqrt(sqmean)
 
 
 print("RS_uv_z rms: " + str(meansq(RS_uv_z)))
