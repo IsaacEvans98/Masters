@@ -281,7 +281,7 @@ dRS_uw_z = np.mean(np.array(dRS_uw), axis=0)
 dRS_uw_zsq = 0
 count2 = 0
 for num2 in range(len(dRS_uw_z)):
-	if ( (num2 / len(dRS_uw_z)) > 0.25 and (num2 / len(dRS_uw_z)) < 0.75):
+	if ( (num2 / len(dRS_uw_z)) > 0.33 and (num2 / len(dRS_uw_z)) < 0.66):
 		dRS_uw_zsq +=  dRS_uw_z[num2] * dRS_uw_z[num2]
 		count2 += 1
 	else:
@@ -303,7 +303,7 @@ dRS_vw_z = np.mean(np.array(dRS_vw), axis=0)
 dRS_vw_zsq = 0
 count3 = 0
 for num3 in range(len(dRS_vw_z)):
-	if ( (num3 / len(dRS_vw_z)) > 0.25 and (num3 /len(dRS_vw_z)) < 0.75):
+	if ( (num3 / len(dRS_vw_z)) > 0.33 and (num3 /len(dRS_vw_z)) < 0.66):
 		dRS_vw_zsq += dRS_vw_z[num3] * dRS_vw_z[num3]
 		count3 += 1
 	else:
@@ -324,7 +324,7 @@ dRS_uv_z = np.mean(np.array(dRS_uv), axis=0)
 dRS_uv_zsq = 0
 count4 = 0
 for num4 in range(len(dRS_uv_z)):
-	if ((num4 / len(dRS_uv_z)) > 0.25 and (num4 /len(dRS_uv_z)) < 0.75):
+	if ((num4 / len(dRS_uv_z)) > 0.33 and (num4 /len(dRS_uv_z)) < 0.66):
 		dRS_uv_zsq += dRS_uv_z[num4] * dRS_uw_z[num4]
 		count4 += 1
 	else:
