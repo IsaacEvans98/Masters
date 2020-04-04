@@ -596,7 +596,7 @@ def meansq (arr):
             num += 1
         else:
             continue
-            sqmean = sqsum / num
+    sqmean = sqsum / num
     return np.sqrt(sqmean)
 
 len_RS_z = len(RS_uv_z)
