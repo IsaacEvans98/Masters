@@ -348,7 +348,7 @@ RS_uw_z = np.mean(np.array(RS_uw), axis=0)
 RS_uw_zsq = 0
 count5 = 0
 for num5 in range(len(RS_uw_z)):
-	if ( (num2 / len(RS_uw_z)) > 0.33 and (num5 / len(RS_uw_z)) < 0.66):
+	if ( (num5 / len(RS_uw_z)) > 0.33 and (num5 / len(RS_uw_z)) < 0.66):
 		RS_uw_zsq +=  RS_uw_z[num5] * RS_uw_z[num5]
 		count5 += 1
 	else:
@@ -590,7 +590,7 @@ plt.clf()
 def meansq (arr):
     sqsum = 0
     num = 0
-    for point in arr:
+    for point in range(arr):
         if ( (num / len(arr)) > 0.33 and (num / len(arr)) < 0.66 ):
             sqsum += point * point
             num += 1
