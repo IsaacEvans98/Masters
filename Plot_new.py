@@ -392,7 +392,7 @@ RS_uv_zsq = 0
 count7 = 0
 for num7 in range(len(RS_uv_z)):
 	if ((num7 / len(RS_uv_z)) > 0.33 and (num7 /len(RS_uv_z)) < 0.66):
-		RS_uv_zsq += RS_uv_z[num7] * RS_uw_z[num7]
+		RS_uv_zsq += RS_uv_z[num7] * RS_uv_z[num7]
 		count7 += 1
 	else:
 		continue
