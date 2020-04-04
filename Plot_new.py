@@ -600,6 +600,22 @@ def meansq (arr):
     return np.sqrt(sqmean)
 
 
+with open(save_direc + "uvRMS2.dat", "w") as f:
+    f.write("RS_uv_zRMS: " + str(meansq(RS_uv_z)) + "\n\n")
+
+    f.close()
+
+with open(save_direc + "uwRMS2.dat", "w") as f:
+    f.write("RS_uw_zRMS: " + str(meansq(RS_uw_z)) + "\n\n")
+
+    f.close()
+
+
+with open(save_direc + "vwRMS2.dat", "w") as f:
+    f.write("RS_vw_zRMS: " + str(meansq(RS_vw_z)) + "\n\n")
+
+    f.close()
+
 print("RS_uv_z rms: " + str(meansq(RS_uv_z)))
 plt.plot(RS_uv_z, z)
 plt.title(get_title (save_direc))
