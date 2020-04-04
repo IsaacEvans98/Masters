@@ -251,7 +251,7 @@ Ro_tot = 0
 count = 0
 for i in range(len(Ro_z)):
 	# Chooses the middle half to average over
-	if ( (i / len(Ro_z)) > 0.25 and (i / len(Ro_z)) < 0.75):
+	if ( (i / len(Ro_z)) > 0.33 and (i / len(Ro_z)) < 0.66):
 		Ro_tot += Ro_z[i]
 		count += 1
 	else:
