@@ -345,7 +345,7 @@ RS_uw_z = np.mean(np.array(RS_uw), axis=0)
 RS_uw_zsq = 0
 count5 = 0
 for num5 in range(len(RS_uw_z)):
-	if ( (num2 / len(RS_uw_z)) > 0.25 and (num5 / len(RS_uw_z)) < 0.75):
+	if ( (num2 / len(RS_uw_z)) > 0.33 and (num5 / len(RS_uw_z)) < 0.66):
 		RS_uw_zsq +=  RS_uw_z[num5] * RS_uw_z[num5]
 		count5 += 1
 	else:
@@ -367,7 +367,7 @@ RS_vw_z = np.mean(np.array(RS_vw), axis=0)
 RS_vw_zsq = 0
 count6 = 0
 for num6 in range(len(RS_vw_z)):
-	if ( (num6 / len(RS_vw_z)) > 0.25 and (num6 /len(RS_vw_z)) < 0.75):
+	if ( (num6 / len(RS_vw_z)) > 0.33 and (num6 /len(RS_vw_z)) < 0.66):
 		RS_vw_zsq += RS_vw_z[num6] * RS_vw_z[num6]
 		count6 += 1
 	else:
@@ -388,7 +388,7 @@ RS_uv_z = np.mean(np.array(RS_uv), axis=0)
 RS_uv_zsq = 0
 count7 = 0
 for num7 in range(len(RS_uv_z)):
-	if ((num7 / len(RS_uv_z)) > 0.25 and (num7 /len(RS_uv_z)) < 0.75):
+	if ((num7 / len(RS_uv_z)) > 0.33 and (num7 /len(RS_uv_z)) < 0.66):
 		RS_uv_zsq += RS_uv_z[num7] * RS_uw_z[num7]
 		count7 += 1
 	else:
