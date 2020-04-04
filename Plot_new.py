@@ -590,9 +590,9 @@ plt.clf()
 def meansq (arr):
     sqsum = 0
     num = 0
-    for point in range(arr):
-        if ( (num / len(arr)) > 0.33 and (num / len(arr)) < 0.66 ):
-            sqsum += point * point
+    for point in range(len(arr)):
+        if ( (point / len(arr)) > 0.33 and (point / len(arr)) < 0.66 ):
+            sqsum += arr[point] * arr[point]
             num += 1
         else:
             continue
