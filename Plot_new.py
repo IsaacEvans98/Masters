@@ -592,7 +592,7 @@ def meansq (arr):
     num = 0
     for point in arr:
         sqsum += point * point
-		num += 1
+        num += 1
 
     sqmean = sqsum / num
     return np.sqrt(sqmean)
