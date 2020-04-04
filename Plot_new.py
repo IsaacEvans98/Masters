@@ -596,6 +596,7 @@ def meansq (arr):
             num += 1
         else:
             continue
+
     sqmean = sqsum / num
     return np.sqrt(sqmean)
 
