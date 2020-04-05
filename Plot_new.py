@@ -655,7 +655,7 @@ with open(save_direc + "duvRMS2.dat", "w") as f:
 dRS_vw_z2 = np.mean(np.array(dRS_vw), axis=0) / pow(Ta, 0.5)
 with open(save_direc + "dvwRMS_Ta.dat", "w") as f:
     f.write("dRS_vw_zRMS: " + str(meansq(dRS_vw_z2)) + "\n\n")
-        f.write("Height, uv\n")
+    f.write("Height, d(vw)/Ta^0.5\n")
         for i in range(len(dRS_uv_z2)):
             f.write(str( i / (len(dRS_vw_z2) - 1) ) + "," + str(dRS_vw_z2[i]) + "\n")
     f.close()
@@ -663,6 +663,7 @@ with open(save_direc + "dvwRMS_Ta.dat", "w") as f:
 dRS_uw_z2 = np.mean(np.array(dRS_uw), axis=0) / pow(Ta, 0.5)
 with open(save_direc + "duwRMS_Ta.dat", "w") as f:
     f.write("dRS_uw_zRMS: " + str(meansq(dRS_uw_z2)) + "\n\n")
+    f.write("Height, d(uw)/Ta^0.5\n")
     for i in range(len(dRS_uw_z2)):
         f.write(str( i / (len(dRS_uw_z2) - 1) ) + "," + str(dRS_uw_z2[i]) + "\n")
 
@@ -671,6 +672,7 @@ with open(save_direc + "duwRMS_Ta.dat", "w") as f:
 dRS_uv_z2 = np.mean(np.array(dRS_uv), axis=0) / pow(Ta, 0.5)
 with open(save_direc + "duvRMS_Ta.dat", "w") as f:
     f.write("dRS_uv_zRMS: " + str(meansq(dRS_uv_z2)) + "\n\n")
+    f.write("Height, d(uv)/Ta^0.5\n")
     for i in range(len(dRS_uv_z2)):
         f.write(str( i / (len(dRS_uv_z2) - 1) ) + "," + str(dRS_uv_z2[i]) + "\n")
 
