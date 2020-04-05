@@ -343,6 +343,21 @@ with open(save_direc + "duvRMS.dat", "w") as f:
 
 
 
+#dRS with included Ta
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 RS_uw_z = np.mean(np.array(RS_uw), axis=0)
 RS_uw_zsq = 0
@@ -634,6 +649,29 @@ with open(save_direc + "duvRMS2.dat", "w") as f:
     f.write("dRS_uv_zRMS: " + str(meansq(dRS_uv_z)) + "\n\n")
 
     f.close()
+
+
+
+dRS_vw_z2 = np.mean(np.array(dRS_vw), axis=0) / pow(Ta, 0.5)
+with open(save_direc + "dvwRMS_Ta.dat", "w") as f:
+    f.write("dRS_vw_zRMS: " + str(meansq(dRS_vw_z2)) + "\n\n")
+
+    f.close()
+
+dRS_uw_z2 = np.mean(np.array(dRS_uw), axis=0) / pow(Ta, 0.5)
+with open(save_direc + "duwRMS_Ta.dat", "w") as f:
+    f.write("dRS_uw_zRMS: " + str(meansq(dRS_uw_z2)) + "\n\n")
+
+    f.close()
+
+dRS_uv_z2 = np.mean(np.array(dRS_uv), axis=0) / pow(Ta, 0.5)
+with open(save_direc + "duvRMS_Ta.dat", "w") as f:
+    f.write("dRS_uv_zRMS: " + str(meansq(dRS_uv_z2)) + "\n\n")
+
+    f.close()
+
+
+
 
 print("RS_uv_z rms: " + str(meansq(RS_uv_z)))
 plt.plot(RS_uv_z, z)
