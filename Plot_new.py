@@ -656,7 +656,7 @@ dRS_vw_z2 = np.mean(np.array(dRS_vw), axis=0) / pow(Ta, 0.5)
 with open(save_direc + "dvwRMS_Ta.dat", "w") as f:
     f.write("dRS_vw_zRMS: " + str(meansq(dRS_vw_z2)) + "\n\n")
     f.write("Height, d(vw)/Ta^0.5\n")
-    for i in range(len(dRS_uv_z2)):
+    for i in range(len(dRS_vw_z2)):
         f.write(str( i / (len(dRS_vw_z2) - 1) ) + "," + str(dRS_vw_z2[i]) + "\n")
     f.close()
 
