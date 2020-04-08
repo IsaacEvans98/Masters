@@ -11,6 +11,7 @@ from decimal import Decimal
 import sys
 import importlib
 import fractions
+import panda as pd
 
 from shutil import copy2
 
@@ -202,6 +203,12 @@ dRS_vw = dRS_vw[:,0,:]
 u_bar = u_bar[:,0,:]
 v_bar = v_bar[:,0,:]
 w_bar = w_bar[:,0,:]
+Ta7duv = np.array(pd.read_excel (r '/home/ie230/Masters/Ta7.5duv.xlsx'))
+Ta7duw = np.array(pd.read_excel (r '/home/ie230/Masters/Ta7.5duw.xlsx'))
+Ta7dvw = np.array(pd.read_excel (r '/home/ie230/Masters/Ta7.5dvw.xlsx'))
+Ta5duv = np.array(pd.read_excel (r '/home/ie230/Masters/Ta5.5duv.xlsx'))
+Ta5duw = np.array(pd.read_excel (r '/home/ie230/Masters/Ta5.5duw.xlsx'))
+Ta5dvw = np.array(pd.read_excel (r '/home/ie230/Masters/Ta5.5dvw.xlsx'))
 
 arrays = [RS_uv, RS_uw, RS_vw, dRS_uv, dRS_uw, dRS_vw, u_bar, v_bar, w_bar]
 
@@ -654,7 +661,7 @@ with open(save_direc + "duvRMS2.dat", "w") as f:
 
 dRS_vw_z2 = np.mean(np.array(dRS_vw), axis=0) / pow(Ta, 0.5)
 with open(save_direc + "dvwRMS_Ta.dat", "w") as f:
-    f.write("dRS_vw_zRMS: " + str(meansq(dRS_vw_z2)) + "\n\n")
+    f.write("dRS_vw_z/TaRMS: " + str(meansq(dRS_vw_z2)) + "\n\n")
     f.write("Height, d(vw)/Ta^0.5\n")
     for i in range(len(dRS_vw_z2)):
         f.write(str( i / (len(dRS_vw_z2) - 1) ) + "," + str(dRS_vw_z2[i]) + "\n")
