@@ -564,6 +564,93 @@ plt.savefig(save_direc + "dRS_vw_z.pdf")
 plt.close()
 plt.clf()
 
+dRS_uv_z2 = np.mean(np.array(dRS_uv), axis=0) / pow(Ta, 0.5)
+plt.plot(dRS_uv_z2, z)
+plt.title(get_title (save_direc))
+plt.xlabel(r"$ \frac{\partial\left\langle\overline{uv}\right\rangle} {\partial z}$")
+plt.ylabel(r"$z$")
+plt.ylim(0,max(z))
+plt.xlim(find_limit (dRS_uv_z2))
+plt.savefig(save_direc + "dRS_uv_z2.pdf")
+plt.close()
+plt.clf()
+
+dRS_uw_z2 = np.mean(np.array(dRS_uw), axis=0) / pow(Ta, 0.5)
+plt.plot(dRS_uw_z2, z)
+plt.title(get_title (save_direc))
+plt.xlabel(r"$ \frac{\partial\left\langle\overline{uw}\right\rangle} {\partial z Ta^{0.5}}$")
+plt.ylabel(r"$z$")
+plt.ylim(0,max(z))
+plt.xlim(find_limit (dRS_uw_z2))
+plt.savefig(save_direc + "dRS_uw_z2.pdf")
+plt.close()
+plt.clf()
+
+dRS_vw_z2 = np.mean(np.array(dRS_vw), axis=0) / pow(Ta, 0.5)
+plt.plot(dRS_uw_z2, z)
+plt.title(get_title (save_direc))
+plt.xlabel(r"$ \frac{\partial\left\langle\overline{vw}\right\rangle} {\partial z Ta^{0.5}}$")
+plt.ylabel(r"$z$")
+plt.ylim(0,max(z))
+plt.xlim(find_limit (dRS_uw_z2))
+plt.savefig(save_direc + "dRS_vw_z3.pdf")
+plt.close()
+plt.clf()
+
+
+plt.plot(Ta7duv, z7e5)
+plt.title(get_title (save_direc))
+plt.xlabel(r"$ \frac{\partial\left\langle\overline{uv}\right\rangle} {\partial z Ta^{0.5}}$")
+plt.ylabel(r"$z$")
+plt.ylim(0,1.1*max(z7e5))
+plt.xlim(find_limit (Ta7duv))
+plt.savefig(save_direc + dRS_uv_7)
+
+plt.plot(Ta7dvw, z7e5)
+plt.title(get_title (save_direc))
+plt.xlabel(r"$ \frac{\partial\left\langle\overline{vw}\right\rangle} {\partial z Ta^{0.5}}$")
+plt.ylabel(r"$z$")
+plt.ylim(0,1.1*max(z7e5))
+plt.xlim(find_limit (Ta7dvw))
+plt.savefig(save_direc + dRS_vw_7)
+
+plt.plot(Ta7duw, z7e5)
+plt.title(get_title (save_direc))
+plt.xlabel(r"$ \frac{\partial\left\langle\overline{uw}\right\rangle} {\partial z Ta^{0.5}}$")
+plt.ylabel(r"$z$")
+plt.ylim(0,1.1*max(z7e5))
+plt.xlim(find_limit (Ta7duw))
+plt.savefig(save_direc + dRS_uw_7)
+
+
+plt.plot(Ta5duv, z5e5)
+plt.title(get_title (save_direc))
+plt.xlabel(r"$ \frac{\partial\left\langle\overline{uv}\right\rangle} {\partial z Ta^{0.5}}$")
+plt.ylabel(r"$z$")
+plt.ylim(0,1.1*max(z5e5))
+plt.xlim(find_limit (Ta5duv))
+plt.savefig(save_direc + dRS_uv_5)
+
+plt.plot(Ta7dvw, z5e5)
+plt.title(get_title (save_direc))
+plt.xlabel(r"$ \frac{\partial\left\langle\overline{vw}\right\rangle} {\partial z Ta^{0.5}}$")
+plt.ylabel(r"$z$")
+plt.ylim(0,1.1*max(z5e5))
+plt.xlim(find_limit (Ta5dvw))
+plt.savefig(save_direc + dRS_vw_5)
+
+plt.plot(Ta5duw, z5e5)
+plt.title(get_title (save_direc))
+plt.xlabel(r"$ \frac{\partial\left\langle\overline{uw}\right\rangle} {\partial z Ta^{0.5}}$")
+plt.ylabel(r"$z$")
+plt.ylim(0,1.1*max(z5e5))
+plt.xlim(find_limit (Ta5duw))
+plt.savefig(save_direc + dRS_uw_5)
+
+
+
+
+
 # Ro vs. time prob not that useful
 #
 # Ro_t = np.mean(np.array(Ro), axis=1)
