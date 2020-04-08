@@ -203,12 +203,11 @@ dRS_vw = dRS_vw[:,0,:]
 u_bar = u_bar[:,0,:]
 v_bar = v_bar[:,0,:]
 w_bar = w_bar[:,0,:]
-Ta7duv = pd.read_excel (r '\home\ie230\Masters\Ta7.5duv.xlsx')
-Ta7duw = pd.read_excel (r '\home\ie230\Masters\Ta7.5duw.xlsx')
-Ta7dvw = pd.read_excel (r '\home\ie230\Masters\Ta7.5dvw.xlsx')
-Ta5duv = pd.read_excel (r '\home\ie230\Masters\Ta5.5duv.xlsx')
-Ta5duw = pd.read_excel (r '\home\ie230\Masters\Ta5.5duw.xlsx')
-Ta5dvw = pd.read_excel (r '\home\ie230\Masters\Ta5.5dvw.xlsx')
+Ta7duv = pd.read_excel (r '/home/ie230/Masters/Ta7.5duv.xlsx')
+Ta7duw = pd.read_excel (r '/home/ie230/Masters/Ta7.5duw.xlsx')
+Ta7dvw = pd.read_excel (r '/home/ie230/Masters/Ta7.5dvw.xlsx')
+Ta5duv = pd.read_excel (r '/home/ie230/Masters/Ta5.5duv.xlsx')
+Ta5duw = pd.read_excel (r '/home/ie230/Masters/Ta5.5duw.xlsx')
 
 arrays = [RS_uv, RS_uw, RS_vw, dRS_uv, dRS_uw, dRS_vw, u_bar, v_bar, w_bar]
 
