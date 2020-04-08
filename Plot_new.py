@@ -11,7 +11,7 @@ from decimal import Decimal
 import sys
 import importlib
 import fractions
-import panda as pd
+import pandas as pd
 
 from shutil import copy2
 
