@@ -604,7 +604,7 @@ plt.xlabel(r"$ \frac{\partial\left\langle\overline{uv}\right\rangle} {\partial z
 plt.ylabel(r"$z$")
 plt.ylim(0,1.1*max(z7e5))
 plt.xlim(find_limit (Ta7duv))
-plt.savefig(save_direc + dRS_uv_7)
+plt.savefig(save_direc + 'dRS_uv_7')
 
 plt.plot(Ta7dvw, z7e5)
 plt.title(get_title (save_direc))
@@ -612,7 +612,7 @@ plt.xlabel(r"$ \frac{\partial\left\langle\overline{vw}\right\rangle} {\partial z
 plt.ylabel(r"$z$")
 plt.ylim(0,1.1*max(z7e5))
 plt.xlim(find_limit (Ta7dvw))
-plt.savefig(save_direc + dRS_vw_7)
+plt.savefig(save_direc + 'dRS_vw_7')
 
 plt.plot(Ta7duw, z7e5)
 plt.title(get_title (save_direc))
@@ -620,7 +620,7 @@ plt.xlabel(r"$ \frac{\partial\left\langle\overline{uw}\right\rangle} {\partial z
 plt.ylabel(r"$z$")
 plt.ylim(0,1.1*max(z7e5))
 plt.xlim(find_limit (Ta7duw))
-plt.savefig(save_direc + dRS_uw_7)
+plt.savefig(save_direc + 'dRS_uw_7')
 
 
 plt.plot(Ta5duv, z5e5)
@@ -629,7 +629,7 @@ plt.xlabel(r"$ \frac{\partial\left\langle\overline{uv}\right\rangle} {\partial z
 plt.ylabel(r"$z$")
 plt.ylim(0,1.1*max(z5e5))
 plt.xlim(find_limit (Ta5duv))
-plt.savefig(save_direc + dRS_uv_5)
+plt.savefig(save_direc + 'dRS_uv_5')
 
 plt.plot(Ta7dvw, z5e5)
 plt.title(get_title (save_direc))
@@ -637,7 +637,7 @@ plt.xlabel(r"$ \frac{\partial\left\langle\overline{vw}\right\rangle} {\partial z
 plt.ylabel(r"$z$")
 plt.ylim(0,1.1*max(z5e5))
 plt.xlim(find_limit (Ta5dvw))
-plt.savefig(save_direc + dRS_vw_5)
+plt.savefig(save_direc + 'dRS_vw_5')
 
 plt.plot(Ta5duw, z5e5)
 plt.title(get_title (save_direc))
@@ -645,7 +645,7 @@ plt.xlabel(r"$ \frac{\partial\left\langle\overline{uw}\right\rangle} {\partial z
 plt.ylabel(r"$z$")
 plt.ylim(0,1.1*max(z5e5))
 plt.xlim(find_limit (Ta5duw))
-plt.savefig(save_direc + dRS_uw_5)
+plt.savefig(save_direc + 'dRS_uw_5')
 
 
 
