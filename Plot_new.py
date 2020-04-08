@@ -203,12 +203,15 @@ dRS_vw = dRS_vw[:,0,:]
 u_bar = u_bar[:,0,:]
 v_bar = v_bar[:,0,:]
 w_bar = w_bar[:,0,:]
-Ta7duv = pd.read_excel ('/home/ie230/Masters/Ta7.5duv.xlsx')
-Ta7duw = pd.read_excel ('/home/ie230/Masters/Ta7.5duw.xlsx')
-Ta7dvw = pd.read_excel ('/home/ie230/Masters/Ta7.5dvw.xlsx')
-Ta5duv = pd.read_excel ('/home/ie230/Masters/Ta5.5duv.xlsx')
-Ta5duw = pd.read_excel ('/home/ie230/Masters/Ta5.5duw.xlsx')
 
+Ta7duv = [5.22, 6.68, 8.53, 9.53, 11.3, 12.8, 14.4]
+Ta7duw = [2.38, 3.01, 3.91, 3.92, 4.57, 4.90, 4.60]
+Ta7dvw = [4.01, 3.57, 4.29, 3.96, 4.98, 4.12, 3.59]
+Ta5duv [5.22, 6.68, 8.53, 9.53, 11.3, 12.8, 14.4, 17.63]
+Ta5duw = [2.38, 3.01, 3.91, 3.92, 4.57, 4.90, 4.60, 4.29]
+Ta5dvw = [4.01, 3.57, 4.29, 3.96, 4.98, 4.12, 3.59]
+Z5e5 = [0.1269, 0.1428, 0.1746, 0.2222, 0.3650, 0.4444, 0.5070, 0.5873]
+z7e5 [0.1746, 0.3809, 0.4603, 0.4921, 0.5597, 0.5714]
 arrays = [RS_uv, RS_uw, RS_vw, dRS_uv, dRS_uw, dRS_vw, u_bar, v_bar, w_bar]
 
 print("diagnostic: shape of arrays")
