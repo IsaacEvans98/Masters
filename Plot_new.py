@@ -564,10 +564,10 @@ plt.savefig(save_direc + "dRS_vw_z.pdf")
 plt.close()
 plt.clf()
 
-dRS_uv_z2 = np.mean(np.array(dRS_uv), axis=0) / pow(Ta, 0.5)
+dRS_uv_z2 = np.sqrt((np.mean(np.array(dRS_uv), axis=0) / pow(Ta, 0.5))*(np.mean(np.array(dRS_uv), axis=0) / pow(Ta, 0.5)))
 plt.plot(dRS_uv_z2, z)
 plt.title(get_title (save_direc))
-plt.xlabel(r"$ \frac{\partial\left\langle\overline{uv}\right\rangle} {\partial z}$")
+plt.xlabel(r"$ \frac{\partial\left\langle\overline{uv}\right\rangle} {\partial z Ta^{0.5}}$")
 plt.ylabel(r"$z$")
 plt.ylim(0,max(z))
 plt.xlim(find_limit (dRS_uv_z2))
@@ -575,7 +575,7 @@ plt.savefig(save_direc + "dRS_uv_z2.pdf")
 plt.close()
 plt.clf()
 
-dRS_uw_z2 = np.mean(np.array(dRS_uw), axis=0) / pow(Ta, 0.5)
+dRS_uw_z2 = np.sqrt((np.mean(np.array(dRS_uw), axis=0) / pow(Ta, 0.5))*(np.mean(np.array(dRS_uw), axis=0) / pow(Ta, 0.5)))
 plt.plot(dRS_uw_z2, z)
 plt.title(get_title (save_direc))
 plt.xlabel(r"$ \frac{\partial\left\langle\overline{uw}\right\rangle} {\partial z Ta^{0.5}}$")
@@ -586,14 +586,14 @@ plt.savefig(save_direc + "dRS_uw_z2.pdf")
 plt.close()
 plt.clf()
 
-dRS_vw_z2 = np.mean(np.array(dRS_vw), axis=0) / pow(Ta, 0.5)
+dRS_vw_z2 = np.sqrt((np.mean(np.array(dRS_vw), axis=0) / pow(Ta, 0.5))*(np.mean(np.array(dRS_vw), axis=0) / pow(Ta, 0.5)))
 plt.plot(dRS_uw_z2, z)
 plt.title(get_title (save_direc))
 plt.xlabel(r"$ \frac{\partial\left\langle\overline{vw}\right\rangle} {\partial z Ta^{0.5}}$")
 plt.ylabel(r"$z$")
 plt.ylim(0,max(z))
 plt.xlim(find_limit (dRS_uw_z2))
-plt.savefig(save_direc + "dRS_vw_z3.pdf")
+plt.savefig(save_direc + "dRS_vw_z2.pdf")
 plt.close()
 plt.clf()
 
@@ -721,6 +721,9 @@ def meansq (arr):
     return np.sqrt(sqmean)
 
 
+
+
+
 with open(save_direc + "uvRMS2.dat", "w") as f:
     f.write("RS_uv_zRMS: " + str(meansq(RS_uv_z)) + "\n\n")
 
@@ -783,6 +786,24 @@ with open(save_direc + "duvRMS_Ta.dat", "w") as f:
         f.write(str( i / (len(dRS_uv_z2) - 1) ) + "," + str(dRS_uv_z2[i]) + "\n")
 
     f.close()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
