@@ -589,7 +589,7 @@ plt.close()
 plt.clf()
 
 dRS_vw_z2 = np.sqrt((np.mean(np.array(dRS_vw), axis=0) / pow(Ta, 0.5))*(np.mean(np.array(dRS_vw), axis=0) / pow(Ta, 0.5)))
-plt.plot(dRS_uw_z2, z)
+plt.plot(dRS_vw_z2, z)
 plt.plot(Ta5dvw, z5e5)
 plt.title(get_title (save_direc))
 plt.xlabel(r"$ \frac{\partial\left\langle\overline{vw}\right\rangle} {\partial z Ta^{0.5}}$")
