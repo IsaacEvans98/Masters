@@ -635,7 +635,7 @@ plt.plot(Ta5dvw, z5e5)
 plt.title(get_title (save_direc))
 plt.xlabel(r"$ \frac{\partial\left\langle\overline{vw}\right\rangle} {\partial z Ta^{0.5}}$")
 plt.ylabel(r"$z$")
-plt.ylim(0,(z))
+plt.ylim(0,max(z))
 plt.xlim(find_limit (Ta5dvw))
 plt.savefig(save_direc + 'dRS_vw_5')
 
