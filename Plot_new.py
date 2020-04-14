@@ -223,6 +223,11 @@ RS_vw_t = np.mean(np.array(RS_vw), axis=1)
 RS_uv_z = np.mean(np.array(RS_uv), axis=0)
 RS_uw_z = np.mean(np.array(RS_uw), axis=0)
 RS_vw_z = np.mean(np.array(RS_vw), axis=0)
+dRS_uw_z = np.mean(np.array(dRS_uw), axis=0)
+dRS_vw_z = np.mean(np.array(dRS_vw), axis=0)
+dRS_uv_z = np.mean(np.array(dRS_uv), axis=0)
+
+
 
 grad_RS_uv=[]
 for i in range (0, len(z) - 1):
@@ -285,7 +290,7 @@ with open(save_direc + "Ro.dat", "w") as f:
 
 
 
-dRS_uw_z = np.mean(np.array(dRS_uw), axis=0)
+
 dRS_uw_zsq = 0
 count2 = 0
 for num2 in range(len(dRS_uw_z)):
@@ -307,7 +312,7 @@ with open(save_direc + "duwRMS.dat", "w") as f:
 
 
 
-dRS_vw_z = np.mean(np.array(dRS_vw), axis=0)
+
 dRS_vw_zsq = 0
 count3 = 0
 for num3 in range(len(dRS_vw_z)):
@@ -328,7 +333,7 @@ with open(save_direc + "dvwRMS.dat", "w") as f:
     f.close()
 
 
-dRS_uv_z = np.mean(np.array(dRS_uv), axis=0)
+
 dRS_uv_zsq = 0
 count4 = 0
 for num4 in range(len(dRS_uv_z)):
@@ -379,13 +384,13 @@ for num5 in range(len(RS_uw_z)):
 
 RS_uw_zRMS = np.sqrt( RS_uw_zsq / count5 )
 
-
-with open(save_direc + "uwRMS.dat", "w") as f:
-    f.write("RS_uw_zRMS: " + str(RS_uw_zRMS) + "\n\n")
+with open(save_direc + "RS_uw_RMS.dat", "w") as f:
+    f.write("average RS_uw_zRMS: " + str(RS_uw_zRMS) + "\n\n")
     f.write("Height, duwRMS\n")
     for i in range(len(RS_uw_z)):
         f.write(str( i / (len(RS_uw_z) - 1) ) + "," + str(RS_uw_z[i]) + "\n")
     f.close()
+
 
 
 
@@ -401,13 +406,14 @@ for num6 in range(len(RS_vw_z)):
 
 RS_vw_zRMS = np.sqrt( RS_vw_zsq / count6 )
 
-
-with open(save_direc + "vwRMS.dat", "w") as f:
-    f.write("RS_vw_zRMS: " + str(RS_vw_zRMS) + "\n\n")
+with open(save_direc + "RS_vw_RMS.dat", "w") as f:
+    f.write("average RS_vw_zRMS: " + str(RS_vw_zRMS) + "\n\n")
     f.write("Height, vwRMS\n")
     for i in range(len(RS_vw_z)):
         f.write(str( i / (len(RS_vw_z) - 1) ) + "," + str(RS_vw_z[i]) + "\n")
     f.close()
+
+
 
 
 RS_uv_z = np.mean(np.array(RS_uv), axis=0)
@@ -422,9 +428,8 @@ for num7 in range(len(RS_uv_z)):
 
 RS_uv_zRMS = np.sqrt( RS_uv_zsq / count7 )
 
-
-with open(save_direc + "uvRMS.dat", "w") as f:
-    f.write("RS_uv_zRMS: " + str(RS_uv_zRMS) + "\n\n")
+with open(save_direc + "RS_uv_RMS.dat", "w") as f:
+    f.write("average RS_uv_zRMS: " + str(RS_uv_zRMS) + "\n\n")
     f.write("Height, uv\n")
     for i in range(len(RS_uv_z)):
         f.write(str( i / (len(RS_uv_z) - 1) ) + "," + str(RS_uv_z[i]) + "\n")
@@ -564,41 +569,46 @@ plt.savefig(save_direc + "dRS_vw_z.pdf")
 plt.close()
 plt.clf()
 
-dRS_uv_z2 = np.sqrt((np.mean(np.array(dRS_uv), axis=0) / pow(Ta, 0.5))*(np.mean(np.array(dRS_uv), axis=0) / pow(Ta, 0.5)))
-plt.plot(dRS_uv_z2, z)
+dRS_uv_zRMS = np.sqrt((np.mean(np.array(dRS_uv), axis=0) / pow(Ta, 0.5))*(np.mean(np.array(dRS_uv), axis=0) / pow(Ta, 0.5)))
+plt.plot(dRS_uv_zRMS, z)
 plt.plot(Ta5duv, z5e5)
 plt.title(get_title (save_direc))
 plt.xlabel(r"$ \frac{\partial\left\langle\overline{uv}\right\rangle} {\partial z Ta^{0.5}}$")
 plt.ylabel(r"$z$")
 plt.ylim(0,max(z))
-plt.xlim(find_limit (dRS_uv_z2))
-plt.savefig(save_direc + "dRS_uv_z2.pdf")
+plt.xlim(find_limit (dRS_uv_zRMS))
+plt.savefig(save_direc + "dRS_uv_zRMS.pdf")
 plt.close()
 plt.clf()
 
-dRS_uw_z2 = np.sqrt((np.mean(np.array(dRS_uw), axis=0) / pow(Ta, 0.5))*(np.mean(np.array(dRS_uw), axis=0) / pow(Ta, 0.5)))
-plt.plot(dRS_uw_z2, z)
+dRS_uw_zRMS = np.sqrt((np.mean(np.array(dRS_uw), axis=0) / pow(Ta, 0.5))*(np.mean(np.array(dRS_uw), axis=0) / pow(Ta, 0.5)))
+plt.plot(dRS_uw_zRMS, z)
 plt.plot(Ta5duw, z5e5)
 plt.title(get_title (save_direc))
 plt.xlabel(r"$ \frac{\partial\left\langle\overline{uw}\right\rangle} {\partial z Ta^{0.5}}$")
 plt.ylabel(r"$z$")
 plt.ylim(0,max(z))
-plt.xlim(find_limit (dRS_uw_z2))
-plt.savefig(save_direc + "dRS_uw_z2.pdf")
+plt.xlim(find_limit (dRS_uw_zRMS))
+plt.savefig(save_direc + "dRS_uw_zRMS.pdf")
 plt.close()
 plt.clf()
 
-dRS_vw_z2 = np.sqrt((np.mean(np.array(dRS_vw), axis=0) / pow(Ta, 0.5))*(np.mean(np.array(dRS_vw), axis=0) / pow(Ta, 0.5)))
-plt.plot(dRS_vw_z2, z)
+dRS_vw_zRMS = np.sqrt((np.mean(np.array(dRS_vw), axis=0) / pow(Ta, 0.5))*(np.mean(np.array(dRS_vw), axis=0) / pow(Ta, 0.5)))
+plt.plot(dRS_vw_zRMS, z)
 plt.plot(Ta5dvw, z5e5)
 plt.title(get_title (save_direc))
 plt.xlabel(r"$ \frac{\partial\left\langle\overline{vw}\right\rangle} {\partial z Ta^{0.5}}$")
 plt.ylabel(r"$z$")
 plt.ylim(0,max(z))
-plt.xlim(find_limit (dRS_uw_z2))
-plt.savefig(save_direc + "dRS_vw_z2.pdf")
+plt.xlim(find_limit (dRS_vw_zRMS))
+plt.savefig(save_direc + "dRS_vw_zRMS.pdf")
 plt.close()
 plt.clf()
+
+
+
+
+
 
 
 plt.plot(Ta7duv, z7e5, 'ro')
@@ -727,66 +737,69 @@ def meansq (arr):
 
 
 
-with open(save_direc + "uvRMS2.dat", "w") as f:
+with open(save_direc + "RS_uv_RMS2.dat", "w") as f:
     f.write("RS_uv_zRMS: " + str(meansq(RS_uv_z)) + "\n\n")
 
     f.close()
 
-with open(save_direc + "uwRMS2.dat", "w") as f:
+with open(save_direc + "RS_uw_RMS2.dat", "w") as f:
     f.write("RS_uw_zRMS: " + str(meansq(RS_uw_z)) + "\n\n")
 
     f.close()
 
 
-with open(save_direc + "vwRMS2.dat", "w") as f:
+with open(save_direc + "RS_vw_RMS2.dat", "w") as f:
     f.write("RS_vw_zRMS: " + str(meansq(RS_vw_z)) + "\n\n")
 
     f.close()
 
 
 
-with open(save_direc + "dvwRMS2.dat", "w") as f:
+with open(save_direc + "dRS_vw_RMS2.dat", "w") as f:
     f.write("dRS_vw_zRMS: " + str(meansq(dRS_vw_z)) + "\n\n")
 
     f.close()
 
 
-with open(save_direc + "duwRMS2.dat", "w") as f:
+with open(save_direc + "dRS_uw_RMS2.dat", "w") as f:
     f.write("dRS_uw_zRMS: " + str(meansq(dRS_uw_z)) + "\n\n")
 
     f.close()
 
 
-with open(save_direc + "duvRMS2.dat", "w") as f:
+with open(save_direc + "dRS_uv_RMS2.dat", "w") as f:
     f.write("dRS_uv_zRMS: " + str(meansq(dRS_uv_z)) + "\n\n")
 
     f.close()
 
 
 
-dRS_vw_z2 = np.mean(np.array(dRS_vw), axis=0) / pow(Ta, 0.5)
-with open(save_direc + "dvwRMS_Ta.dat", "w") as f:
-    f.write("dRS_vw_z/TaRMS: " + str(meansq(dRS_vw_z2)) + "\n\n")
+
+
+
+dRS_vw_zTa = np.mean(np.array(dRS_vw), axis=0) / pow(Ta, 0.5)
+with open(save_direc + "dRS_vw_RMS_Ta.dat", "w") as f:
+    f.write("dRS_vw_z/TaRMS: " + str(meansq(dRS_vw_zTa)) + "\n\n")
     f.write("Height, d(vw)/Ta^0.5\n")
-    for i in range(len(dRS_vw_z2)):
-        f.write(str( i / (len(dRS_vw_z2) - 1) ) + "," + str(dRS_vw_z2[i]) + "\n")
+    for i in range(len(dRS_vw_zTa)):
+        f.write(str( i / (len(dRS_vw_zTa) - 1) ) + "," + str(dRS_vw_zTa[i]) + "\n")
     f.close()
 
-dRS_uw_z2 = np.mean(np.array(dRS_uw), axis=0) / pow(Ta, 0.5)
-with open(save_direc + "duwRMS_Ta.dat", "w") as f:
-    f.write("dRS_uw_zRMS: " + str(meansq(dRS_uw_z2)) + "\n\n")
+dRS_uw_zTa = np.mean(np.array(dRS_uw), axis=0) / pow(Ta, 0.5)
+with open(save_direc + "dRS_uw_RMS_Ta.dat", "w") as f:
+    f.write("dRS_uw_zRMS: " + str(meansq(dRS_uw_zTa)) + "\n\n")
     f.write("Height, d(uw)/Ta^0.5\n")
-    for i in range(len(dRS_uw_z2)):
-        f.write(str( i / (len(dRS_uw_z2) - 1) ) + "," + str(dRS_uw_z2[i]) + "\n")
+    for i in range(len(dRS_uw_zTa)):
+        f.write(str( i / (len(dRS_uw_zTa) - 1) ) + "," + str(dRS_uw_zTa[i]) + "\n")
 
     f.close()
 
-dRS_uv_z2 = np.mean(np.array(dRS_uv), axis=0) / pow(Ta, 0.5)
-with open(save_direc + "duvRMS_Ta.dat", "w") as f:
-    f.write("dRS_uv_zRMS: " + str(meansq(dRS_uv_z2)) + "\n\n")
+dRS_uv_zTa = np.mean(np.array(dRS_uv), axis=0) / pow(Ta, 0.5)
+with open(save_direc + "dRS_uv_RMS_Ta.dat", "w") as f:
+    f.write("dRS_uv_zRMS: " + str(meansq(dRS_uv_zTa)) + "\n\n")
     f.write("Height, d(uv)/Ta^0.5\n")
-    for i in range(len(dRS_uv_z2)):
-        f.write(str( i / (len(dRS_uv_z2) - 1) ) + "," + str(dRS_uv_z2[i]) + "\n")
+    for i in range(len(dRS_uv_zTa)):
+        f.write(str( i / (len(dRS_uv_zTa) - 1) ) + "," + str(dRS_uv_zTa[i]) + "\n")
 
     f.close()
 
