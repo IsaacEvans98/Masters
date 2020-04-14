@@ -453,7 +453,7 @@ plt.savefig(save_direc + "dRS_vw_t.pdf")
 plt.close()
 plt.clf()
 
-dRS_uv_z = np.mean(np.array(dRS_uv), axis=0) /(pow(Ta, 0.5) * math.sign(Phi))
+dRS_uv_z = np.mean(np.array(dRS_uv), axis=0) /(pow(Ta, 0.5) * math.sin(Phi))
 dRS_uv_z2 = np.mean(np.array(dRS_uv2), axis=0) / (pow(Ta, 0.5) * math.sin(Phi))
 dRS_uv_z3 = np.mean(np.array(dRS_uv3), axis=0) / (pow(Ta, 0.5) * math.sin(Phi))
 plt.plot(dRS_uv_z, z)
