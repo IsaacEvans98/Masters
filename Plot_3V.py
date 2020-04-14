@@ -11,7 +11,7 @@ from decimal import Decimal
 import sys
 import importlib
 import fractions
-
+import math
 from shutil import copy2
 
 #plt.rc('axes', titlesize=20)
@@ -453,9 +453,9 @@ plt.savefig(save_direc + "dRS_vw_t.pdf")
 plt.close()
 plt.clf()
 
-dRS_uv_z = np.mean(np.array(dRS_uv), axis=0) /(pow(Ta, 0.5) * sin(Phi))
-dRS_uv_z2 = np.mean(np.array(dRS_uv2), axis=0) / (pow(Ta, 0.5) * sin(Phi))
-dRS_uv_z3 = np.mean(np.array(dRS_uv3), axis=0) / (pow(Ta, 0.5) * sin(Phi))
+dRS_uv_z = np.mean(np.array(dRS_uv), axis=0) /(pow(Ta, 0.5) * math.sign(Phi))
+dRS_uv_z2 = np.mean(np.array(dRS_uv2), axis=0) / (pow(Ta, 0.5) * math.sin(Phi))
+dRS_uv_z3 = np.mean(np.array(dRS_uv3), axis=0) / (pow(Ta, 0.5) * math.sin(Phi))
 plt.plot(dRS_uv_z, z)
 plt.plot(dRS_uv_z2, z, 'g', linestyle='dashed')
 plt.plot(dRS_uv_z3, z, 'r', linestyle='dashed')
@@ -469,9 +469,9 @@ plt.savefig(save_direc + "dRS_uv_z.pdf")
 plt.close()
 plt.clf()
 
-dRS_uw_z = np.mean(np.array(dRS_uw), axis=0) / (pow(Ta, 0.5) * sin(Phi))
-dRS_uw_z2 = np.mean(np.array(dRS_uw2), axis=0) / (pow(Ta, 0.5) * sin(Phi))
-dRS_uw_z3 = np.mean(np.array(dRS_uw3), axis=0) / (pow(Ta, 0.5) * sin(Phi))
+dRS_uw_z = np.mean(np.array(dRS_uw), axis=0) / (pow(Ta, 0.5) * math.sin(Phi))
+dRS_uw_z2 = np.mean(np.array(dRS_uw2), axis=0) / (pow(Ta, 0.5) * math.sin(Phi))
+dRS_uw_z3 = np.mean(np.array(dRS_uw3), axis=0) / (pow(Ta, 0.5) * math.sin(Phi))
 plt.plot(dRS_uw_z, z)
 plt.plot(dRS_uw_z2, z, 'g', linestyle='dashed')
 plt.plot(dRS_uw_z3, z, 'r', linestyle='dashed')
@@ -485,9 +485,9 @@ plt.savefig(save_direc + "dRS_uw_z.pdf")
 plt.close()
 plt.clf()
 
-dRS_vw_z = np.mean(np.array(dRS_vw), axis=0) / pow(Ta, 0.5)
-dRS_vw_z2 = np.mean(np.array(dRS_vw2), axis=0) /pow(Ta, 0.5)
-dRS_vw_z3 = np.mean(np.array(dRS_vw3), axis=0) / pow(Ta, 0.5)
+dRS_vw_z = np.mean(np.array(dRS_vw), axis=0) / (pow(Ta, 0.5) * math.sin(Phi))
+dRS_vw_z2 = np.mean(np.array(dRS_vw2), axis=0) /(pow(Ta, 0.5) * math.sin(Phi))
+dRS_vw_z3 = np.mean(np.array(dRS_vw3), axis=0) / (pow(Ta, 0.5) * math.sin(Phi))
 plt.plot(dRS_vw_z, z)
 plt.plot(dRS_vw_z2, z, 'g', linestyle='dashed')
 plt.plot(dRS_vw_z3, z, 'r', linestyle='dashed')
