@@ -866,46 +866,68 @@ plt.xlabel(r"$\left\langle\overline{vw}\right\rangle$")
 plt.ylabel(r"z")
 plt.ylim(0,max(z))
 plt.xlim(find_limit (RS_vw_z))
-plt.savefig(save_direc + "RS_vw_z5.pdf")
+plt.savefig(save_direc + "RS_vw_zRMS5.pdf")
 plt.close()
 plt.clf()
 
-
+RS_uv_zRMS = np.sqrt((RS_uv_z)*(RS_uv_z))
 print("RS_uv_z rms: " + str(meansq(RS_uv_z)))
-plt.plot(RS_uv_z, z)
+plt.plot(RS_uv_zRMS, z)
 plt.plot(RS7uv, z7e5, 'ro')
 plt.title(get_title (save_direc))
-plt.xlabel(r"$\left\langle\overline{uv}\right\rangle$")
+plt.xlabel(r"$(\left\langle\ \rho_{ref} overline{uv}\right\rangle)_{RMS}$")
 plt.ylabel(r"z")
 plt.ylim(0,max(z))
-plt.xlim(find_limit (RS_uv_z))
-plt.savefig(save_direc + "RS_uv_z7.pdf")
+plt.xlim(find_limit (RS_uv_zRMS))
+plt.savefig(save_direc + "RS_uv_zRMS7.pdf")
 plt.close()
 plt.clf()
 
-print("RS_uw_z rms: " + str(meansq(RS_uw_z)))
+RS_uw_zRMS = np.sqrt((RS_uw_z)*(RS_uw_z))
+print("RS_uw_zRMS rms: " + str(meansq(RS_uw_z)))
 plt.plot(RS_uw_z, z)
-plt.title(get_title (save_direc))
 plt.plot(RS7uw, z7e5, 'ro')
-plt.xlabel(r"$\left\langle\overline{uw}\right\rangle$")
+plt.title(get_title (save_direc))
+
+plt.xlabel(r"$(\left\langle\\rho_{ref} overline{uw}\right\rangle)_{RMS}$")
 plt.ylabel(r"z")
 plt.ylim(0,max(z))
-plt.xlim(find_limit (RS_uw_z))
-plt.savefig(save_direc + "RS_uw_z7.pdf")
+plt.xlim(find_limit (RS_uw_zRMS))
+plt.savefig(save_direc + "RS_uw_zRMS7.pdf")
 plt.close()
 plt.clf()
 
+RS_vw_zRMS = np.sqrt((RS_vw_z)*(RS_vw_z))
 print("RS_vw_z rms: " + str(meansq(RS_vw_z)))
-plt.plot(RS_vw_z, z)
+plt.plot(RS_vw_zRMS, z)
 plt.plot(RS7vw, z7e5, 'ro')
 plt.title(get_title (save_direc))
-plt.xlabel(r"$\left\langle\overline{vw}\right\rangle$")
+plt.xlabel(r"$(\left\langle\ \rho_{ref} overline{vw}\right\rangle)_{RMS}$")
 plt.ylabel(r"z")
 plt.ylim(0,max(z))
-plt.xlim(find_limit (RS_vw_z))
+plt.xlim(find_limit (RS_vw_zRMS))
 plt.savefig(save_direc + "RS_vw_z7.pdf")
 plt.close()
 plt.clf()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 plt.plot(grad_RS_uv, z[0:-1])
 plt.title(get_title (save_direc))
