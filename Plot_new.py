@@ -931,10 +931,9 @@ plt.clf()
 
 RS_uw_zRMS = np.sqrt((RS_uw_z)*(RS_uw_z))
 print("RS_uw_zRMS rms: " + str(meansq(RS_uw_z)))
-plt.plot(RS_uw_z, z)
+plt.plot(RS_uw_zRMS, z)
 plt.plot(RS5uw, z5e5, 'ro')
 plt.title(get_title (save_direc))
-
 plt.xlabel(r"$(rho_{ref} \left\langle \ overline{uw}\right\rangle)_{RMS}$")
 plt.ylabel(r"z")
 plt.ylim(0,max(z))
