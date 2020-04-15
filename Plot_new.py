@@ -203,6 +203,16 @@ u_bar = u_bar[:,0,:]
 v_bar = v_bar[:,0,:]
 w_bar = w_bar[:,0,:]
 
+
+
+RS5uv = [ 900.6, 956.8, 1254, 1342, 1788.01, 1370.8, 1127.34, 602.6]
+RS5uw = [ 913.8, 1018.4, 1206.5,, 1310.7,  1585.1, 1398.3, , 1275.4,962.34]
+RS5vw = [ 1257.13, 1088.2, 1141.6,  1067.2, 1167.8, 990, 891.7, 834.8, ]
+RS5uv = [ 900.6, 956.8, 1254, 1342, 1788.01, 1370.8, 1127.34
+RS5uw = [ 913.8, 1018.4, 1206.5,, 1310.7,  1585.1, 1398.3, 1275.4]
+RS5vw = [ 1257.13, 1088.2, 1141.6,  1067.2, 1167.8, 990, 891.7, ]
+
+
 Ta7duv = [5.22, 6.68, 8.53, 9.53, 11.3, 12.8, 14.4]
 Ta7duw = [2.38, 3.01, 3.91, 3.92, 4.57, 4.90, 4.60]
 Ta7dvw = [4.01, 3.57, 4.29, 3.96, 4.98, 4.12, 3.59]
@@ -314,7 +324,7 @@ with open(save_direc + "duwRMS.dat", "w") as f:
 
 
 dRS_vw_zsq = 0
-count3 = 0
+count3 = 0  bv c v
 for num3 in range(len(dRS_vw_z)):
 	if ( (num3 / len(dRS_vw_z)) > 0.33 and (num3 /len(dRS_vw_z)) < 0.66):
 		dRS_vw_zsq += dRS_vw_z[num3] * dRS_vw_z[num3]
@@ -573,7 +583,7 @@ dRS_uv_zRMS = np.sqrt((np.mean(np.array(dRS_uv), axis=0) / pow(Ta, 0.5))*(np.mea
 plt.plot(dRS_uv_zRMS, z)
 plt.plot(Ta5duv, z5e5, 'ro')
 plt.title(get_title (save_direc))
-plt.xlabel(r"$ \frac{\partial\left\langle\overline{uv}\right\rangle} {\partial z Ta^{0.5}}$")
+plt.xlabel(r"$ \frac{1}{Ta^{\frac{1}{2}} sin \phi}   \frac{\partial(\rho_{ref} \left\langle\overline{uv}\right\rangle)} {\partial z }$")
 plt.ylabel(r"$z$")
 plt.ylim(0,max(z))
 plt.xlim(find_limit (dRS_uv_zRMS))
@@ -585,7 +595,7 @@ dRS_uw_zRMS = np.sqrt((np.mean(np.array(dRS_uw), axis=0) / pow(Ta, 0.5))*(np.mea
 plt.plot(dRS_uw_zRMS, z)
 plt.plot(Ta5duw, z5e5, 'ro')
 plt.title(get_title (save_direc))
-plt.xlabel(r"$ \frac{\partial\left\langle\overline{uw}\right\rangle} {\partial z Ta^{0.5}}$")
+plt.xlabel(r"$ \frac{1}{Ta^{\frac{1}{2}} sin \phi}   \frac{\partial(\rho_{ref} \left\langle\overline{uw}\right\rangle)} {\partial z }$")
 plt.ylabel(r"$z$")
 plt.ylim(0,max(z))
 plt.xlim(find_limit (dRS_uw_zRMS))
@@ -597,7 +607,7 @@ dRS_vw_zRMS = np.sqrt((np.mean(np.array(dRS_vw), axis=0) / pow(Ta, 0.5))*(np.mea
 plt.plot(dRS_vw_zRMS, z)
 plt.plot(Ta5dvw, z5e5, 'ro')
 plt.title(get_title (save_direc))
-plt.xlabel(r"$ \frac{\partial\left\langle\overline{vw}\right\rangle} {\partial z Ta^{0.5}}$")
+plt.xlabel(r"$ \frac{1}{Ta^{\frac{1}{2}} sin \phi}   \frac{\partial(\rho_{ref} \left\langle\overline{vw}\right\rangle)} {\partial z }$")
 plt.ylabel(r"$z$")
 plt.ylim(0,max(z))
 plt.xlim(find_limit (dRS_vw_zRMS))
