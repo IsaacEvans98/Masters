@@ -324,7 +324,7 @@ with open(save_direc + "duwRMS.dat", "w") as f:
 
 
 dRS_vw_zsq = 0
-count3 = 0  bv c v
+count3 = 0 
 for num3 in range(len(dRS_vw_z)):
 	if ( (num3 / len(dRS_vw_z)) > 0.33 and (num3 /len(dRS_vw_z)) < 0.66):
 		dRS_vw_zsq += dRS_vw_z[num3] * dRS_vw_z[num3]
