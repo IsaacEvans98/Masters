@@ -183,27 +183,27 @@ analysis.add_task("integ(s,'y')/Ly", layout='g', name='<s>_y')
 # Mean Reynolds number
 analysis.add_task("integ( integ( sqrt(u*u + v*v + w*w) , 'y')/Ly, 'z')/Lz", layout='g', name='Re')
 
- Reynolds stresses (averaged over y):
-analysis.add_task("integ( ((u - (integ(u, 'y')/Ly)) * (v - (integ(v, 'y')/Ly))), 'y')/Ly", layout='g', name='RS_xy')
-analysis.add_task("integ( ((u - (integ(u, 'y')/Ly)) * (w - (integ(w, 'y')/Ly))), 'y')/Ly", layout='g', name='RS_xz')
-analysis.add_task("integ( ((v - (integ(v, 'y')/Ly)) * (w - (integ(w, 'y')/Ly))), 'y')/Ly", layout='g', name='RS_yz')
+# Reynolds stresses (averaged over y):
+#analysis.add_task("integ( ((u - (integ(u, 'y')/Ly)) * (v - (integ(v, 'y')/Ly))), 'y')/Ly", layout='g', name='RS_xy')
+#analysis.add_task("integ( ((u - (integ(u, 'y')/Ly)) * (w - (integ(w, 'y')/Ly))), 'y')/Ly", layout='g', name='RS_xz')
+#analysis.add_task("integ( ((v - (integ(v, 'y')/Ly)) * (w - (integ(w, 'y')/Ly))), 'y')/Ly", layout='g', name='RS_yz')
 
- Differential Reynolds stresses:
-analysis.add_task("dz( integ( ((u - (integ(u, 'y')/Ly)) * (v - (integ(v, 'y')/Ly))), 'y')/Ly )", layout='g', name='RS_xy_dz')
-analysis.add_task("dz( integ( ((u - (integ(u, 'y')/Ly)) * (w - (integ(w, 'y')/Ly))), 'y')/Ly )", layout='g', name='RS_xz_dz')
-analysis.add_task("dz( integ( ((v - (integ(v, 'y')/Ly)) * (w - (integ(w, 'y')/Ly))), 'y')/Ly )", layout='g', name='RS_yz_dz')
+# Differential Reynolds stresses:
+#analysis.add_task("dz( integ( ((u - (integ(u, 'y')/Ly)) * (v - (integ(v, 'y')/Ly))), 'y')/Ly )", layout='g', name='RS_xy_dz')
+#analysis.add_task("dz( integ( ((u - (integ(u, 'y')/Ly)) * (w - (integ(w, 'y')/Ly))), 'y')/Ly )", layout='g', name='RS_xz_dz')
+#analysis.add_task("dz( integ( ((v - (integ(v, 'y')/Ly)) * (w - (integ(w, 'y')/Ly))), 'y')/Ly )", layout='g', name='RS_yz_dz')
 
 
 #Differential reynolds stresses including rho ref
 # Reynolds stresses (averaged over y):
-analysis.add_task("rho_ref *(integ( ((u - (integ(u, 'y')/Ly)) * (v - (integ(v, 'y')/Ly))), 'y')/Ly)", layout='g', name='RS_xy_p')
-analysis.add_task("rho_ref *(integ( ((u - (integ(u, 'y')/Ly)) * (w - (integ(w, 'y')/Ly))), 'y')/Ly)", layout='g', name='RS_xz_p')
-analysis.add_task("rho_ref *(integ( ((v - (integ(v, 'y')/Ly)) * (w - (integ(w, 'y')/Ly))), 'y')/Ly)", layout='g', name='RS_yz_p')
+analysis.add_task("rho_ref *(integ( ((u - (integ(u, 'y')/Ly)) * (v - (integ(v, 'y')/Ly))), 'y')/Ly)", layout='g', name='RS_xy')
+analysis.add_task("rho_ref *(integ( ((u - (integ(u, 'y')/Ly)) * (w - (integ(w, 'y')/Ly))), 'y')/Ly)", layout='g', name='RS_xz')
+analysis.add_task("rho_ref *(integ( ((v - (integ(v, 'y')/Ly)) * (w - (integ(w, 'y')/Ly))), 'y')/Ly)", layout='g', name='RS_yz')
 
 # Differential Reynolds stresses:
-analysis.add_task("dz(rho_ref * (integ( ((u - (integ(u, 'y')/Ly)) * (v - (integ(v, 'y')/Ly))), 'y')/Ly) )", layout='g', name='RS_xy_dz_p')
-analysis.add_task("dz( rho_ref *( integ( ((u - (integ(u, 'y')/Ly)) * (w - (integ(w, 'y')/Ly))), 'y')/Ly) )", layout='g', name='RS_xz_dz_p')
-analysis.add_task("dz( rho_ref * (integ( ((v - (integ(v, 'y')/Ly)) * (w - (integ(w, 'y')/Ly))), 'y')/Ly) )", layout='g', name='RS_yz_dz_p')
+analysis.add_task("dz(rho_ref * (integ( ((u - (integ(u, 'y')/Ly)) * (v - (integ(v, 'y')/Ly))), 'y')/Ly) )", layout='g', name='RS_xy_dz')
+analysis.add_task("dz( rho_ref *( integ( ((u - (integ(u, 'y')/Ly)) * (w - (integ(w, 'y')/Ly))), 'y')/Ly) )", layout='g', name='RS_xz_dz')
+analysis.add_task("dz( rho_ref * (integ( ((v - (integ(v, 'y')/Ly)) * (w - (integ(w, 'y')/Ly))), 'y')/Ly) )", layout='g', name='RS_yz_dz')
 
 
 
