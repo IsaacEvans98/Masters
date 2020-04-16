@@ -33,8 +33,8 @@ plot_snapshots = True
 # Best to run the script once first with plot_fluxes = False, and checking the
 # KE plot to see when the simulation has equilibrated, then running again with
 # plot_fluxes = True, and sensible values for the two parameters below.
-avg_t_start = 3.0
-avg_t_stop  = 4.0
+avg_t_start = 1.0
+avg_t_stop  = 2.0
 
 
 #if os.path.exists(save_direc) == False:
