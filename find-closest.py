@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 STRAT_DIR = "/home/djb236/FINAL2/STRATIFIED/Ta=7.50E+05/Phi=30/"
 BOUS_FILE = "/home/djb236/FINAL2/Ro_collected.txt"
-SAVE_DIR = "/home/ie230/FINAL2/STRATIFIED/Ta=7.50E+05/"
+SAVE_DIR = "/home/ie230/PLOTS/Ta7.5/"
 
 strat_f = open(STRAT_DIR + "Ro.dat", "r")
 strat_raw = strat_f.read()
